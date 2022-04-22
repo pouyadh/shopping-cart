@@ -1,13 +1,9 @@
 import React from "react";
 import "./ShoppingCart.scss";
-import { cross, plus, minus, trash } from "../../constants/images";
+import { cross } from "../../constants/images";
 
 import { useSelector, useDispatch } from "react-redux";
-import {
-  addItem,
-  removeItem,
-  hideShoppingCartModal,
-} from "../../features/shoppingCart/shoppingCartSlice";
+import { hideShoppingCartModal } from "../../features/shoppingCart/shoppingCartSlice";
 
 import Counter from "./Counter";
 
