@@ -1,0 +1,18 @@
+.shopping-cart-counter {
+    margin: 0px 10px;
+    display: flex;
+    align-items: center;
+    gap:10px;
+    border: 1px solid #0002;
+    box-shadow: 0px 0px 4px #0002;
+    border-radius: 100vw;
+    padding: 10px;
+    &__btn {
+        width: 1rem;
+        height: 1rem;
+        cursor: pointer;
+        &:hover {
+            filter: drop-shadow(0px 0px 4px #0008);
+        }
+    }
+}

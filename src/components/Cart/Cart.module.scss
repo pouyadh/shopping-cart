@@ -1,0 +1,79 @@
+.wrapper {
+    position: relative;
+  border: 1px solid #eee;
+  display: inline-block;
+  padding: 1rem;
+  border-radius: 4px;
+  transition: box-shadow 0.2s ease;
+  &:hover {
+    box-shadow: 0px 0px 10px #0002;
+  }
+}
+
+.image{
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    cursor: pointer;
+}
+  
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    max-width: 20ch;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.price-offer {
+    color: black;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.price {
+    color: grey;
+  text-decoration: line-through;
+}
+
+.off-badge {
+    padding: 5px;
+  background-color: rgb(192, 0, 0);
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  position: absolute;
+  right: 0;
+  box-shadow: 0px 4px 4px #0003;
+}
+
+.rate {
+    font-size: 1.1rem;
+}
+
+.button-add {
+    display: block;
+    border: none;
+    outline: none;
+    color: green;
+    background-color: transparent;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 0.6rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: auto;
+    &:hover {
+      background-color: #00800020;
+    }
+    &:active {
+      background-color: #00800040;
+    }
+}
+
+
+.rate-star {
+    width: 24px;
+  height: 24px;
+}

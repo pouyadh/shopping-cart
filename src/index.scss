@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito' , sans-serif;
+    box-sizing: border-box;
+}
+html {
+    font-size: 14;
+}
+
+::-webkit-scrollbar {
+    width: .6rem;
+    height: .6rem;
+    &-track {
+        background-color: #0001;
+        border-radius: 100vw ;
+    }
+    &-thumb {
+        background-color: #0005;
+        border-radius: 100vw;
+        &:hover {
+            background-color: #0006;
+        }
+        &:active {
+            background-color: #0009;
+        }
+    }
+}

@@ -1,0 +1,9 @@
+.home {
+    &__cart-container {
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+}
