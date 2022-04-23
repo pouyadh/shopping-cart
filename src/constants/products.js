@@ -10,6 +10,7 @@ const products = [
     img512: "/product-images/512/pim-0-512.jpg",
     imgorg: "/product-images/org/pim-0-org.jpg",
     rate: 3,
+    availableInStock: true,
     description:
       "ASUS ZenBook 14 Ultra-Slim Laptop 14” FHD Nano-Edge Bezel, 8th-Gen Intel Core i7-8565U Processor, 16GB LPDDR3, 512GB PCIe SSD, Backlit KB, Numberpad, Windows 10 - UX433FA-DH74, Royal Blue",
     variants: [

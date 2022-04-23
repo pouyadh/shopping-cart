@@ -4,6 +4,7 @@ import "./Modals.scss";
 
 import ShoppingCart from "../../components/ShoppingCart/ShoppingCart";
 import { hideModal, MODALS } from "../../features/modal/modalSlice";
+import ProductSearch from "../../components/ProductSearch/ProductSearch";
 
 const ModalWrapper = ({ children, onClose }) => {
   const handleClick = (e) => {
@@ -36,6 +37,7 @@ const Modals = () => {
   return (
     <ModalWrapper onClose={() => dispatch(hideModal())}>
       {activeModal === MODALS.SHOPPING_CART && <ShoppingCart />}
+      {activeModal === MODALS.PRODUCT_SEARCH && <ProductSearch />}
     </ModalWrapper>
   );
 };

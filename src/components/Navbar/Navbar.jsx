@@ -3,7 +3,10 @@ import "./Navbar.scss";
 
 import logo from "../../assets/logo.png";
 import { useDispatch, useSelector } from "react-redux";
-import { showShoppingCartModal } from "../../features/modal/modalSlice";
+import {
+  showShoppingCartModal,
+  showProductSearchModal,
+} from "../../features/modal/modalSlice";
 
 import { search, basket } from "../../constants/images";
 
@@ -32,7 +35,10 @@ const Navbar = () => {
             </span>
           )}
         </span>
-        <span className="navbar__group__icon-button">
+        <span
+          className="navbar__group__icon-button"
+          onClick={() => dispatch(showProductSearchModal())}
+        >
           <img
             src={search}
             className="navbar__group__icon-button__icon"
