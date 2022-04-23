@@ -99,6 +99,7 @@ const ProductSearch = () => {
           className="product-search__text__input"
           placeholder="Search..."
           ref={searchTextRef}
+          autoComplete="off"
         />
       </div>
 
