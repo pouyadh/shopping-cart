@@ -1,21 +1,45 @@
 import React from "react";
-import styles from "./Navbar.module.scss";
+import "./Navbar.scss";
+
 import logo from "../../assets/logo.png";
-import Basket from "./Basket";
 import { useDispatch, useSelector } from "react-redux";
 import { showShoppingCartModal } from "../../features/shoppingCart/shoppingCartSlice";
+
+import { search, basket } from "../../constants/images";
 
 const Navbar = () => {
   const shoppingCartItems = useSelector((state) => state.shoppingCart.items);
   const dispatch = useDispatch();
+  const itemCount = shoppingCartItems.length;
 
   return (
-    <div className={styles.wrapper}>
-      <img className={styles.logo} src={logo} alt="logo" />
-      <Basket
-        itemCount={shoppingCartItems.length}
-        onClick={() => dispatch(showShoppingCartModal())}
-      />
+    <div className="navbar">
+      <img className="navbar__logo" src={logo} alt="logo" />
+
+      <span className="navbar__group">
+        <span
+          className="navbar__group__icon-button"
+          onClick={() => dispatch(showShoppingCartModal())}
+        >
+          <img
+            src={basket}
+            className="navbar__group__icon-button__icon"
+            alt="basket"
+          />
+          {!!itemCount && (
+            <span className="navbar__group__icon-button__badge">
+              {itemCount}
+            </span>
+          )}
+        </span>
+        <span className="navbar__group__icon-button">
+          <img
+            src={search}
+            className="navbar__group__icon-button__icon"
+            alt="search"
+          />
+        </span>
+      </span>
     </div>
   );
 };
