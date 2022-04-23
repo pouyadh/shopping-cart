@@ -3,7 +3,7 @@ import "./ShoppingCart.scss";
 import { cross } from "../../constants/images";
 
 import { useSelector, useDispatch } from "react-redux";
-import { hideShoppingCartModal } from "../../features/shoppingCart/shoppingCartSlice";
+import { hideModal } from "../../features/modal/modalSlice";
 
 import Counter from "./Counter";
 
@@ -30,7 +30,7 @@ const ShoppingCart = () => {
             src={cross}
             className="shopping-cart__header__close-btn"
             alt="close"
-            onClick={() => dispatch(hideShoppingCartModal())}
+            onClick={() => dispatch(hideModal())}
           />
         </div>
         <div className="shopping-cart__text">Your cart is empty.</div>
@@ -45,7 +45,7 @@ const ShoppingCart = () => {
           src={cross}
           className="shopping-cart__header__close-btn"
           alt="close"
-          onClick={() => dispatch(hideShoppingCartModal())}
+          onClick={() => dispatch(hideModal())}
         />
       </div>
       <span className="shopping-cart__item-count">{items.length} items</span>

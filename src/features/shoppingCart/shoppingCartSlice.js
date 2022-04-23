@@ -3,7 +3,6 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   items: [], // example : [{id:1,count:2} , {id:3,count:1}]
   itemsById: {},
-  isModalShowing: false,
 };
 
 const shoppingCartSlice = createSlice({
@@ -34,19 +33,8 @@ const shoppingCartSlice = createSlice({
         }
       }
     },
-    showShoppingCartModal: (state) => {
-      state.isModalShowing = true;
-    },
-    hideShoppingCartModal: (state) => {
-      state.isModalShowing = false;
-    },
   },
 });
 
-export const {
-  addItem,
-  removeItem,
-  showShoppingCartModal,
-  hideShoppingCartModal,
-} = shoppingCartSlice.actions;
+export const { addItem, removeItem } = shoppingCartSlice.actions;
 export default shoppingCartSlice.reducer;

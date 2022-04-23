@@ -3,7 +3,7 @@ import "./Navbar.scss";
 
 import logo from "../../assets/logo.png";
 import { useDispatch, useSelector } from "react-redux";
-import { showShoppingCartModal } from "../../features/shoppingCart/shoppingCartSlice";
+import { showShoppingCartModal } from "../../features/modal/modalSlice";
 
 import { search, basket } from "../../constants/images";
 

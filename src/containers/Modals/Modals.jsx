@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import "./Modals.scss";
 
 import ShoppingCart from "../../components/ShoppingCart/ShoppingCart";
-import { hideShoppingCartModal } from "../../features/shoppingCart/shoppingCartSlice";
+import { hideModal, MODALS } from "../../features/modal/modalSlice";
 
 const ModalWrapper = ({ children, onClose }) => {
   const handleClick = (e) => {
@@ -28,18 +28,15 @@ const ModalWrapper = ({ children, onClose }) => {
 };
 
 const Modals = () => {
-  const isShoppingCartModalShowing = useSelector(
-    (state) => state.shoppingCart.isModalShowing
-  );
+  const activeModal = useSelector((state) => state.modal.activeModal);
   const dispatch = useDispatch();
+
+  if (activeModal === MODALS.NONE) return null;
+
   return (
-    <>
-      {isShoppingCartModalShowing && (
-        <ModalWrapper onClose={() => dispatch(hideShoppingCartModal())}>
-          <ShoppingCart />
-        </ModalWrapper>
-      )}
-    </>
+    <ModalWrapper onClose={() => dispatch(hideModal())}>
+      {activeModal === MODALS.SHOPPING_CART && <ShoppingCart />}
+    </ModalWrapper>
   );
 };
 
