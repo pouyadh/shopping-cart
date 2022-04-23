@@ -14,7 +14,7 @@ const modalSlice = createSlice({
   name: "modal",
   initialState,
   reducers: {
-    showProductModal: (state) => {
+    showProductSearchModal: (state) => {
       state.activeModal = MODALS.PRODUCT_SEARCH;
     },
     showShoppingCartModal: (state) => {
@@ -26,6 +26,6 @@ const modalSlice = createSlice({
   },
 });
 
-export const { showProductModal, showShoppingCartModal, hideModal } =
+export const { showProductSearchModal, showShoppingCartModal, hideModal } =
   modalSlice.actions;
 export default modalSlice.reducer;
