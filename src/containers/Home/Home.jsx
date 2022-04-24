@@ -7,13 +7,11 @@ export default function Home() {
   const products = useSelector((state) => state.product.items);
   return (
     <>
-      <main>
-        <div className="home__cart-container">
-          {products.map((item) => (
-            <Cart key={item.id} {...item} />
-          ))}
-        </div>
-      </main>
+      <div className="home__cart-container">
+        {products.map((item) => (
+          <Cart key={item.id} {...item} />
+        ))}
+      </div>
     </>
   );
 }
