@@ -5,7 +5,9 @@
   padding: 1rem;
   border-radius: 4px;
   transition: box-shadow 0.2s ease;
-  cursor: pointer;
+  &>div {
+    cursor: pointer;
+  }
   &:hover {
     box-shadow: 0px 0px 10px #0002;
   }
