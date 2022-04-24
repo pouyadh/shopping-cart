@@ -29,7 +29,7 @@ const products = [
       Color: "Royal blue",
       "Hard Disk Size": "512 GB",
     },
-    blts: [
+    bullets: [
       "14-Inch wide-view full HD 4-way Nano-edge bezel Display Matte",
       "Latest 8th generation Intel Core i7-8565u Quad Core Processor (8M Cache up to 4 6 GHz)",
       "Fast storage and memory featuring 512GB Pie NV Me SSD and16GB LPDDR3 RAM Windows 10 Home",
