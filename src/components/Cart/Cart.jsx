@@ -27,7 +27,7 @@ export default function Cart({
       <h3 className={styles["title"]}>{title}</h3>
       <div className={styles["rate"]}>
         <img className={styles["rate-star"]} alt="star" src={star} />
-        {rate}
+        <span>{rate}</span>
       </div>
       <span className={styles["price-offer"]}>${offerPrice}</span>
       <span className={styles["price"]}>${price}</span>
