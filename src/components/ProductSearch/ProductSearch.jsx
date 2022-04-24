@@ -31,6 +31,10 @@ const ProductSearch = () => {
 
   const refreshResult = useCallback(
     (searchValue) => {
+      if (searchValue.length < 2) {
+        setResult([]);
+        return;
+      }
       let tempResult = products.filter(
         (item) => item.title.search(new RegExp(searchValue, "gi")) !== -1
       );
@@ -54,7 +58,7 @@ const ProductSearch = () => {
     timerRef.current = setInterval(() => {
       const oldValue = oldTextValueRef.current;
       const currentValue = searchTextRef.current.value;
-      if (oldValue !== currentValue && currentValue.length > 3) {
+      if (oldValue !== currentValue) {
         refreshResult(currentValue);
       }
       oldTextValueRef.current = currentValue;
@@ -76,7 +80,7 @@ const ProductSearch = () => {
   useEffect(() => {
     const searchText = searchTextRef.current.value;
     refreshResult(searchText);
-  }, [sortMethod, filters]);
+  }, [sortMethod, filters, refreshResult]);
 
   return (
     <div className="product-search">
