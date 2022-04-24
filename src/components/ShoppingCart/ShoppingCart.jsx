@@ -63,7 +63,7 @@ const ShoppingCart = () => {
                   {item.title}
                 </div>
                 <div className="shopping-cart__list__item__desc__price">
-                  ${item.price}
+                  ${item.offerPrice}
                 </div>
               </div>
               <Counter productId={item.id} />
