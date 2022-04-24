@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import "./ProductSearch.scss";
 import { search, cross } from "../../constants/images";
-import { useDispatch, useSelector } from "react-redux";
-import { hideModal } from "../../features/modal/modalSlice";
+import { useSelector } from "react-redux";
+import { useModal } from "../../containers/Modals";
 
 const SORT_FUNCTIONS = {
   priceAsc: (a, b) => a.price - b.price,
@@ -16,7 +16,7 @@ const SORT_FUNCTIONS = {
 
 const ProductSearch = () => {
   const products = useSelector((state) => state.product.items);
-  const dispatch = useDispatch();
+  const modal = useModal();
 
   const [result, setResult] = useState([]);
   const [sortMethod, setSortMethod] = useState("none");
@@ -92,7 +92,7 @@ const ProductSearch = () => {
           src={cross}
           className="product-search__header__close-btn"
           alt="close"
-          onClick={() => dispatch(hideModal())}
+          onClick={() => modal.closeModal()}
         />
       </div>
       <div className="product-search__text">

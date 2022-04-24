@@ -2,10 +2,10 @@ import React from "react";
 import "./ShoppingCart.scss";
 import { cross } from "../../constants/images";
 
-import { useSelector, useDispatch } from "react-redux";
-import { hideModal } from "../../features/modal/modalSlice";
+import { useSelector } from "react-redux";
 
 import Counter from "./Counter";
+import { useModal } from "../../containers/Modals";
 
 const ShoppingCart = () => {
   const shoppingCartItems = useSelector((state) => state.shoppingCart.items);
@@ -15,7 +15,7 @@ const ShoppingCart = () => {
     count,
   }));
 
-  const dispatch = useDispatch();
+  const modal = useModal();
 
   const totalPrice = items
     .reduce((t, item) => t + item.price * item.count, 0)
@@ -30,7 +30,7 @@ const ShoppingCart = () => {
             src={cross}
             className="shopping-cart__header__close-btn"
             alt="close"
-            onClick={() => dispatch(hideModal())}
+            onClick={() => modal.closeModal()}
           />
         </div>
         <div className="shopping-cart__text">Your cart is empty.</div>
@@ -45,7 +45,7 @@ const ShoppingCart = () => {
           src={cross}
           className="shopping-cart__header__close-btn"
           alt="close"
-          onClick={() => dispatch(hideModal())}
+          onClick={() => modal.closeModal()}
         />
       </div>
       <span className="shopping-cart__item-count">{items.length} items</span>

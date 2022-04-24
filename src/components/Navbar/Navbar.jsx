@@ -1,19 +1,14 @@
 import React from "react";
 import "./Navbar.scss";
-
 import logo from "../../assets/logo.png";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  showShoppingCartModal,
-  showProductSearchModal,
-} from "../../features/modal/modalSlice";
-
+import { useSelector } from "react-redux";
 import { search, basket } from "../../constants/images";
+import { useModal } from "../../containers/Modals";
 
 const Navbar = () => {
   const shoppingCartItems = useSelector((state) => state.shoppingCart.items);
-  const dispatch = useDispatch();
   const itemCount = shoppingCartItems.length;
+  const modal = useModal();
 
   return (
     <div className="navbar">
@@ -22,7 +17,7 @@ const Navbar = () => {
       <span className="navbar__group">
         <span
           className="navbar__group__icon-button"
-          onClick={() => dispatch(showShoppingCartModal())}
+          onClick={() => modal.showShoppingCartModal()}
         >
           <img
             src={basket}
@@ -37,7 +32,7 @@ const Navbar = () => {
         </span>
         <span
           className="navbar__group__icon-button"
-          onClick={() => dispatch(showProductSearchModal())}
+          onClick={() => modal.showProductSearchModal()}
         >
           <img
             src={search}
