@@ -4,15 +4,22 @@ import logo from "../../assets/logo.png";
 import { useSelector } from "react-redux";
 import { search, basket } from "../../constants/images";
 import { useModal } from "../../containers/Modals";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const shoppingCartItems = useSelector((state) => state.shoppingCart.items);
   const itemCount = shoppingCartItems.length;
   const modal = useModal();
+  const navigate = useNavigate();
 
   return (
     <div className="navbar">
-      <img className="navbar__logo" src={logo} alt="logo" />
+      <img
+        className="navbar__logo"
+        src={logo}
+        alt="logo"
+        onClick={() => navigate("/")}
+      />
 
       <span className="navbar__group">
         <span
