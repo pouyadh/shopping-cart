@@ -147,7 +147,7 @@ const ProductSearch = () => {
               className="product-search__result__list__item"
             >
               <img
-                src={item.img64}
+                src={`/products/P-${item.id}/media/i1-64.jpg`}
                 alt="some"
                 className="product-search__result__list__item__thumb"
               />
@@ -159,9 +159,17 @@ const ProductSearch = () => {
                   {item.description}
                 </div>
                 <div className="product-search__result__list__item__desc__price">
-                  <span>${item.offerPrice}</span>
-                  <span>${item.price}</span>
-                  <span>{item.off * 100}%</span>
+                  {item.availableInStock && (
+                    <>
+                      <span>${item.offerPrice}</span>
+                      {item.off !== 0 && (
+                        <>
+                          <span>${item.price}</span>
+                          <span>{item.off * 100}%</span>
+                        </>
+                      )}
+                    </>
+                  )}
                 </div>
               </div>
             </div>
