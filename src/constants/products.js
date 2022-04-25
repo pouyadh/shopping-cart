@@ -47,3 +47,5 @@ const products = [
       'Microsoft Surface Pro 8-13" Touchscreen - Intel® Evo Platform Core™ i7-16GB Memory - 256GB SSD - Device Only - Platinum (Latest Model)',
   },
 ];
+
+export default products;
