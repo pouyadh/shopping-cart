@@ -15,7 +15,7 @@ const products = [
     id: 2,
     title: "Apple MacBook Pro",
     price: 2409.93,
-    offerPrice: 0,
+    offerPrice: 2409.93,
     off: 0,
     rate: 4.7,
     "rate-count": 590,
