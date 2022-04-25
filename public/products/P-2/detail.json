@@ -1,0 +1,65 @@
+{
+  "media": {
+    "src": "/media",
+    "image-count": 6,
+    "video-count": 1
+  },
+  "variants": [
+    { "name": "Color", "values": ["Space Gray", "Silver"] },
+    { "name": "Capacity", "values": ["1 TB", "512 GB"] }
+  ],
+  "spec": {
+    "Model Name": "MacBook Pro",
+    "Brand": "Apple",
+    "Specific Uses For Product": "Multimedia, Gaming, Business",
+    "Screen Size": "14.2 Inches",
+    "Operating System": "Mac OS",
+    "CPU Manufacturer": "Apple",
+    "Graphics Card Description": "Integrated",
+    "Color": "Silver",
+    "Connectivity Technology": "Bluetooth, Wi-Fi",
+    "Hard Disk Size": "512 TB"
+  },
+
+  "more": [
+    {
+      "type": "bullet",
+      "title": "About this product",
+      "data": [
+        "Apple M1 Pro or M1 Max chip for a massive leap in CPU, GPU, and machine learning performance",
+        "Up to 10-core CPU delivers up to 3.7x faster performance to fly through pro workflows quicker than ever",
+        "Up to 32-core GPU with up to 13x faster performance for graphics-intensive apps and games",
+        "16-core Neural Engine for up to 11x faster machine learning performance",
+        "Longer battery life, up to 21 hours",
+        "Up to 64GB of unified memory so everything you do is fast and fluid",
+        "Up to 8TB of superfast SSD storage launches apps and opens files in an instant",
+        "Stunning 114-inch Liquid Retina XDR display with extreme dynamic range and contrast ratio",
+        "1080p FaceTime HD camera with advanced image signal processor for sharper video calls",
+        "Six-speaker sound system with force-cancelling woofers"
+      ]
+    },
+    {
+      "type": "image-stack",
+      "data": [
+        "/other/MacBook_Pro_14-in_16-in_Product_Page_L__en-US_01._CB639392504_.jpg",
+        "/other/MacBook_Pro_14-in_16-in_Product_Page_L__en-US_02._CB639392504_.jpg",
+        "/other/MacBook_Pro_14-in_16-in_Product_Page_L__en-US_03._CB639392504_.jpg",
+        "/other/MacBook_Pro_14-in_16-in_Product_Page_L__en-US_04._CB639392504_.jpg",
+        "/other/MacBook_Pro_14-in_16-in_Product_Page_L__en-US_05._CB639392504_.jpg",
+        "/other/MacBook_Pro_14-in_16-in_Product_Page_L__en-US_06._CB639392504_.jpg",
+        "/other/MacBook_Pro_14-in_16-in_Product_Page_L__en-US_07._CB639392504_.jpg",
+        "/other/MacBook_Pro_14-in_16-in_Product_Page_L__en-US_08._CB639392504_.jpg",
+        "/other/MacBook_Pro_14-in_16-in_Product_Page_L__en-US_09._CB639392504_.jpg"
+      ]
+    },
+    {
+      "type": "bullet",
+      "title": "What's in the box",
+      "data": [
+        "14-inch MacBook Pro",
+        "USB-C to MagSafe 3 Cable (2 m)",
+        "67W USB-C Power Adapter"
+      ]
+    }
+  ]
+}

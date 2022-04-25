@@ -1,0 +1,157 @@
+{
+  "media": {
+    "src": "/media",
+    "image-count": 11,
+    "video-count": 3
+  },
+  "variants": [
+    { "name": "Color", "values": ["Platinum", "Graphite"] },
+    {
+      "name": "Size",
+      "values": [
+        "16GB Memory - 256GB SSD",
+        "16GB Memory - 1TB SSD",
+        "16GB Memory - 512GB SSD",
+        "32GB Memory - 1TB SSD",
+        "8GB Memory - 128GB SSD",
+        "8GB Memory - 256GB SSD",
+        "8GB Memory - 256GB SSD",
+        "8GB Memory - 512GB SSD"
+      ]
+    },
+    {
+      "name": "Configuration",
+      "values": ["Intel® Evo Platform Core™ i7", "Intel® Evo Platform Core™ i7"]
+    }
+  ],
+  "spec": {
+    "Series": "Surface Pro",
+    "Brand": "Microsoft",
+    "Screen Size": "13 Inches",
+    "Operating System": "Windows",
+    "Memory Storage Capacity": "16 GB"
+  },
+
+  "more": [
+    {
+      "title": "About this product",
+      "type": "bullet",
+      "data": [
+        "The power of a laptop with the flexibility of a tablet, and every angle in between, with 13” touchscreen, iconic built-in Kickstand, and detachable Keyboard.",
+        "Windows 11 brings your closer to what you love. Family, friends, obsessions, music, creations — Windows 11 is the one place for it all. With a fresh new feel and tools that make it easier to be efficient, it has what you need for whatever’s next.",
+        "The first Surface Pro built on the Intel Evo platform. Do it all with the Intel Evo platform — performance, graphics, and battery life in a thin and light PC.",
+        "The best pen experience on Pro with rechargeable Surface Slim Pen 2 and Surface Pro 8, for the natural feeling of pen on paper,(4) securely stored in Surface Pro Signature Keyboard.",
+        "Type in comfort. Sleek and compact, Surface  Signature Keyboard performs like a traditional laptop keyboard complete with a full function row and backlit keys."
+      ]
+    },
+    {
+      "type": "note",
+      "data": "Products with electrical plugs are designed for use in the US. Outlets and voltage differ internationally and this product may require an adapter or converter for use in your destination. Please check compatibility before purchasing."
+    },
+    {
+      "type": "text",
+      "title": "Legal Disclaimer",
+      "text": "*Some accessories and software sold separately. Available colors and materials may vary by market and configuration. 1 - Battery life varies significantly based on usage, network and feature configuration, signal strength, settings and other factors. See Surface.com for details. 2 - Requires Dolby encoded content and audio. 3 - Pen storage and charging available on select Keyboards. 4 - Tactile signals with Surface Slim Pen 2 can be experienced on some applications on Surface Delia running Windows 11. Surface Slim Pen 2 sold separately."
+    },
+    {
+      "type": "bullet",
+      "title": "What's in the box",
+      "data": [
+        "Pro Device",
+        "Power Supply",
+        "AC Cord",
+        "QSG",
+        "Regulatory Documents"
+      ]
+    },
+    {
+      "type": "image",
+      "image": "/other/a9353301-39e4-440b-a90a-0ca5d7173d5b.__CR0,0,970,300_PT0_SX970_V1___.jpg"
+    },
+    {
+      "type": "cart-stack",
+      "title": "All in an ultra-portable design",
+      "data": [
+        {
+          "image": "/other/64f2e139-f0b6-44a8-85bb-cdd60191b292.__CR0,0,300,300_PT0_SX300_V1___.jpg",
+          "title": "Expect more from your computer",
+          "text": "Surface Pro 8 combines the power of a laptop with the flexibility of a tablet, and every angle in between, with the iconic Kickstand and larger 13” touchscreen."
+        },
+        {
+          "image": "/other/7551e778-702b-462e-ae27-afc4e68bb596.__CR0,0,300,300_PT0_SX300_V1___.jpg",
+          "title": "Our most powerful Pro",
+          "text": "Whether you’re multitasking while on a video call, crushing an Excel spreadsheet, or gaming with friends, Surface Pro 8 will handle it all with 11th Gen Intel Core processors."
+        },
+        {
+          "image": "/other/901c3c19-904f-4984-96d0-c0ef4024c638.__CR0,0,300,300_PT0_SX300_V1___.jpg",
+          "title": "Built on the Intel Evo platform",
+          "text": "Surface Pro 8 is the first consumer laptop-to-tablet PC based on the Intel Evo platform and designed to light up the best of Windows 11."
+        }
+      ]
+    },
+
+    {
+      "type": "cart-stack",
+      "title": "Unlock more possibilities",
+      "data": [
+        {
+          "image": "/other/5e0757e3-4d62-4860-8af9-ff3e82f82487.__CR0,0,220,220_PT0_SX220_V1___.jpg",
+          "title": "Mark up, edit, or create at any angle",
+          "text": "The industry-leading Kickstand adjusts nearly 180 degrees effortlessly – it's like magic."
+        },
+        {
+          "image": "/other/94a70cef-1b75-42cc-bc4e-1e69a8822027.__CR0,0,220,220_PT0_SX220_V1___.jpg",
+          "title": "Easily access your news, entertainment, and more",
+          "text": "Windows 11 comes with Widgets and enhanced browser performance from Microsoft Edge – a perfect combo for performance and personalization."
+        },
+        {
+          "image": "/other/fbb58040-37c8-4589-b8b1-53d2f939e2ee.__CR0,0,220,220_PT0_SX220_V1___.jpg",
+          "title": "Do more than one thing at a time",
+          "text": "Nothing’s holding you back with two USB-C and Thunderbolt 4 ports, WiFi 6 for ultra-fast bandwidth, and a dedicated charging port."
+        },
+        {
+          "image": "/other/e610ce78-e17a-4c14-a865-aa36e8c30adb.__CR0,0,220,220_PT0_SX220_V1___.jpg",
+          "title": "Windows 11 brings you closer to what you love",
+          "text": "Family, friends, passions, music, creations – Windows 11 is the one place for it all. With a fresh new feel and tools that make it easier to be efficient, it has what you need for whatever’s next."
+        }
+      ]
+    },
+
+    {
+      "type": "cart-stack",
+      "title": "Complete your experience with Surface accessories",
+      "data": [
+        {
+          "image": "/other/fa7f4298-6d40-45fe-92cb-b6526ec1e60b.__CR0,0,220,220_PT0_SX220_V1___.jpg",
+          "title": "Surface Pro Signature Keyboard",
+          "text": "Next-level versatility in the perfect, premium Keyboard, with large glass trackpad, luxurious Alcantara, and secure storage and charging for Surface Slim Pen 2.*"
+        },
+        {
+          "image": "/other/d38404e6-c426-46ec-8f63-411082c0e628.__CR0,0,220,220_PT0_SX220_V1___.jpg",
+          "title": "Surface Slim Pen 2",
+          "text": "Write, sketch, navigate, and recharge with the same feeling you get with pen on paper5, with exceptional accuracy and a new storable design."
+        },
+        {
+          "image": "/other/846903e3-937a-44ec-b935-cbd0db24e589.__CR0,0,220,220_PT0_SX220_V1___.jpg",
+          "title": "Surface Arc Mouse",
+          "text": "Designed to conform to your hand and connects via Bluetooth. Choose from rich colors to complement your style. *"
+        },
+        {
+          "image": "/other/824524cd-92f4-43dc-92d0-d2eb63c326a1.__CR0,0,220,220_PT0_SX220_V1___.jpg",
+          "title": "Surface Earbuds",
+          "text": "Never miss a beat with ultra-comfortable design, intuitive controls, and immersive sound. *"
+        }
+      ]
+    },
+
+    {
+      "type": "image",
+      "image": "/other/6922e586-0a52-43b6-aa4a-5d92de6e395e.__CR0,0,970,300_PT0_SX970_V1___.jpg"
+    },
+    {
+      "type": "text",
+      "title": "Product Description",
+      "data": "Unlock more possibilities than ever with the Pro designed for a Pro like you. The first consumer laptop-to-tablet PC based on the Intel® Evo™ platform and designed to light up the best of Windows 11, Surface Pro 8 combines the power of a laptop with the flexibility of a tablet, and every angle in between, with the iconic Kickstand and detachable Keyboard* with built-in Slim Pen storage and charging.** Do great things with a larger 13” touchscreen, faster connections with Thunderbolt™ 4 ports, and extra speed when you need it."
+    }
+  ]
+}

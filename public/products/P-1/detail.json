@@ -1,0 +1,55 @@
+{
+  "media": {
+    "src": "/media",
+    "image-count": 4,
+    "video-count": 2
+  },
+
+  "variants": [
+    { "name": "Color", "values": ["Silver", "Gold", "Space Gray"] },
+    { "name": "Capacity", "values": ["256GB", "512GB"] }
+  ],
+
+  "spec": {
+    "Model Name": "MacBook Air",
+    "Brand": "Apple",
+    "Specific Uses For Product": "Multimedia, Personal, Business",
+    "Screen Size": "13.3 Inches",
+    "Operating System": "Mac OS",
+    "Human Interface Input": "Keyboard",
+    "CPU Manufacturer": "Apple",
+    "Graphics Card Description": "Integrated",
+    "Color": "Silver",
+    "Connectivity Technology": "Bluetooth, Wi-Fi, Bluetooth 5.0"
+  },
+
+  "other": [
+    {
+      "type": "bullet",
+      "title": "More info",
+      "data": [
+        "All-Day Battery Life – Go longer than ever with up to 18 hours of battery life.",
+        "Powerful Performance – Take on everything from professional-quality editing to action-packed gaming with ease. The Apple M1 chip with an 8-core CPU delivers up to 3.5x faster performance than the previous generation while using way less power.",
+        "Superfast Memory – 8GB of unified memory makes your entire system speedy and responsive. That way it can support tasks like memory-hogging multitab browsing and opening a huge graphic file quickly and easily.",
+        "Stunning Display – With a 13.3” Retina display, images come alive with new levels of realism. Text is sharp and clear, and colors are more vibrant.",
+        "Why Mac – Easy to learn. Easy to set up. Astoundingly powerful. Intuitive. Packed with apps to use right out of the box. Mac is designed to let you work, play, and create like never before.",
+        "Simply Compatible – All your existing apps work, including Adobe Creative Cloud, Microsoft 365, and Google Drive. Plus you can use your favorite iPhone and iPad apps directly on macOS. Altogether you’ll have access to the biggest collection of apps ever for Mac. All available on the App Store.",
+        "Easy to Learn – If you already have an iPhone, MacBook Air feels familiar from the moment you turn it on. And it works perfectly with all your Apple devices. Use your iPad to extend the workspace of your Mac, answer texts and phone calls directly on your Mac, and more."
+      ]
+    },
+    {
+      "type": "image-stack",
+      "data": [
+        "/other/MacBook_Air_Product_Page_L_M1_Chip__en-US_01._CB416881859_.jpg",
+        "/other/MacBook_Air_Product_Page_L_M1_Chip__en-US_02._CB416881859_.jpg",
+        "/other/MacBook_Air_Product_Page_L_M1_Chip__en-US_03._CB416881859_.jpg",
+        "/other/MacBook_Air_Product_Page_L_M1_Chip__en-US_04._CB416881859_.jpg",
+        "/other/MacBook_Air_Product_Page_L_M1_Chip__en-US_05._CB416881859_.jpg",
+        "/other/MacBook_Air_Product_Page_L_M1_Chip__en-US_06._CB416881859_.jpg",
+        "/other/MacBook_Air_Product_Page_L_M1_Chip__en-US_07._CB416881859_.jpg",
+        "/other/MacBook_Air_Product_Page_L_M1_Chip__en-US_08._CB416881859_.jpg",
+        "/other/MacBook_Air_Product_Page_L_M1_Chip__en-US_09._CB416881859_.jpg"
+      ]
+    }
+  ]
+}

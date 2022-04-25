@@ -1,0 +1,203 @@
+{
+  "media": {
+    "src": "/media",
+    "image-count": 14,
+    "video-count": 1
+  },
+  "variants": [
+    { "name": "RAM Size", "values": ["32 GB"] },
+    { "name": "Hard Disk Size", "values": ["1 TB"] },
+    { "name": "CPU", "values": ["i9-10980HK", "i9-10980H"] },
+    {
+      "name": "Graphics Description",
+      "values": ["RTX 3070", "RTX 3060", "RTX 3080"]
+    }
+  ],
+  "spec": {
+    "Series": "ZenBook Pro Duo 15",
+    "Brand": "ASUS",
+    "Specific Uses For Product": "Personal, Gaming, Business",
+    "Screen Size": "15.6 Inches",
+    "Operating System": "Windows 10 Pro",
+    "Human Interface Input": "Touchscreen with Stylus Support",
+    "CPU Manufacturer": "Intel",
+    "Card Description": "RTX 3070",
+    "Color": "Celestial Blue",
+    "Connectivity Technology": "Bluetooth, Wi-Fi, USB, HDMI"
+  },
+
+  "more": [
+    {
+      "type": "bullet",
+      "title": "About this product",
+      "data": [
+        "ScreenPad Plus: 14 inch 4K matte touchscreen, giving your endless way to optimize your multitasking experience by extending the screen or split windows and apps on both displays",
+        "15.6 inch OLED 4K UHD (3840 x 2160) NanoEdge touchscreen glossy main display",
+        "10th generation Intel Core i9-10980HK Octa Core Processor and NVIDIA GeForce RTX 3070 with 8GB VRAM – NVIDIA Studio Ready",
+        "Detachable palm rest, laptop stand, backpack and ASUS active stylus pen included",
+        "Fast storage and memory featuring 1TB PCIe NVMe M.2 SSD with 32GB DDR4 RAM",
+        "Built-in IR camera for facial recognition sign in with Windows Hello",
+        "Exclusive ErgoLift design for improved typing position, optimized cooling system and enhanced audio performance",
+        "Extensive connectivity with HDMI, Thunderbolt 3 via USB-C, Gigabit-class Wi-Fi 6 (802.11ax) (*USB Transfer speed may vary. Learn more at ASUS website)",
+        "Comes with Windows 10 and a FREE upgrade to Windows 11 (when available1)"
+      ]
+    },
+    {
+      "type": "note",
+      "data": "Products with electrical plugs are designed for use in the US. Outlets and voltage differ internationally and this product may require an adapter or converter for use in your destination. Please check compatibility before purchasing."
+    },
+    {
+      "type": "bullet",
+      "title": "What's in the box",
+      "data": [
+        "UX582LR-XS94T",
+        "Backpack, palm rest, sleeve, stylus",
+        "Power Adater & Cord",
+        "User Guide",
+        "Warranty Card"
+      ]
+    },
+    {
+      "type": "image-stack",
+      "data": [
+        "/other/MacBook_Pro_14-in_16-in_Product_Page_L__en-US_01._CB639392504_.jpg",
+        "/other/MacBook_Pro_14-in_16-in_Product_Page_L__en-US_02._CB639392504_.jpg",
+        "/other/MacBook_Pro_14-in_16-in_Product_Page_L__en-US_03._CB639392504_.jpg",
+        "/other/MacBook_Pro_14-in_16-in_Product_Page_L__en-US_04._CB639392504_.jpg",
+        "/other/MacBook_Pro_14-in_16-in_Product_Page_L__en-US_05._CB639392504_.jpg",
+        "/other/MacBook_Pro_14-in_16-in_Product_Page_L__en-US_06._CB639392504_.jpg",
+        "/other/MacBook_Pro_14-in_16-in_Product_Page_L__en-US_07._CB639392504_.jpg",
+        "/other/MacBook_Pro_14-in_16-in_Product_Page_L__en-US_08._CB639392504_.jpg",
+        "/other/MacBook_Pro_14-in_16-in_Product_Page_L__en-US_09._CB639392504_.jpg"
+      ]
+    },
+    {
+      "type": "bullet",
+      "title": "What's in the box",
+      "data": [
+        "14-inch MacBook Pro",
+        "USB-C to MagSafe 3 Cable (2 m)",
+        "67W USB-C Power Adapter"
+      ]
+    },
+    {
+      "type": "HIT",
+      "title": "ASUS ZenBook Pro Duo 15 OLED",
+      "image": "/other/4865561d-000b-4bc7-95b9-ba16427edd53.__CR0,0,1464,600_PT0_SX1464_V1___.jpg",
+      "text": "ZenBook Pro Duo 15 OLED is powerful and elegant next-level companion for on-the-go productivity and creativity, featuring a 4K OLED HDR touchscreen. It includes the ASUS ScreenPad Plus secondary 4K display with a brand-new tilting design that offers effortless ergonomics and seamless workflows."
+    },
+    {
+      "type": "HIT",
+      "title": "Endless possibilities with new tilting ScreenPad Plus",
+      "image": "/other/ac01404c-8cd7-42bb-8f16-c0558de01c38.__CR0,0,1464,600_PT0_SX1464_V1___.jpg",
+      "text": "ZenBook Pro Duo 15 OLED includes the tilting ScreenPad Plus, a secondary touchscreen that automatically tilts up by 9.5°, creating an angle of 144.5° between the main display and ScreenPad Plus for more comfortable viewing. You can enjoy seamless visuals across both displays, with easy multitasking."
+    },
+    {
+      "type": "slider",
+      "data": [
+        {
+          "title": "ScreenPad Plus: Control Panel",
+          "text": "Control Panel is an exciting new tool for precise and intuitive control over creative apps. Four types of control are available — Dial, Button, Slider, and Scroll.",
+          "image": "/other/s1/2.jpg"
+        },
+        {
+          "title": "ScreenPad Plus: App Switcher",
+          "text": "Drag an app or window onto the App Switcher icon to launch the app on ScreenPad Plus for multi-window experience",
+          "image": "/other/s1/4.jpg"
+        },
+        {
+          "title": "ScreenPad Plus: Window Flick",
+          "text": "Simply flick the top of an app to send it instantly to the other screen",
+          "image": "/other/s1/4.jpg"
+        },
+        {
+          "title": "ScreenPad Plus: Touchpad mode",
+          "text": "A three-finger tap temporarily turns ScreenPad Plus into a large full-width touchpad. You can turn this feature on or off in Settings",
+          "image": "/other/s1/3.jpg"
+        },
+        {
+          "title": "ScreenPad Plus: View Max",
+          "text": "Maximize your viewing experience by dragging an app onto the ViewMax to extend your screen to secondary display ScreenPad Plus",
+          "image": "/other/s1/5.jpg"
+        },
+        {
+          "title": "ScreenPad Plus: Task Group",
+          "text": "Customize the multi-screen setups that you use the most and access with quick tap on Task Group icon",
+          "image": "/other/s1/1.jpg"
+        }
+      ]
+    },
+
+    {
+      "type": "slider",
+      "data": [
+        {
+          "title": "See it all at once",
+          "text": "ZenBook Pro Duo 15 OLED gives you a superbly immersive viewing experience, with a brilliant 4K OLED HDR NanoEdge display that delivers ultra-vivid colors and deep blacks.",
+          "image": "/othe2/s2/582e2c32-d8d4-4352-ae9c-5977134b9c6f.__CR0,0,1464,600_PT0_SX1464_V1___.jpg"
+        },
+        {
+          "title": "Ultimate professional-grade colors",
+          "text": "ASUS OLED laptops deliver exceptionally detailed and realistic visuals, with a cinema-grade 100% DCI-P3 color gamut. This means that the colors reproduced on the display are richer and more vivid",
+          "image": "/other/s2/805387db-c031-42c2-847a-4691257c3e65.__CR0,0,1464,600_PT0_SX1464_V1___.jpg"
+        },
+        {
+          "title": "70% blue-light reduction for eye care",
+          "text": "ASUS OLED laptops emit 70% less harmful blue light, which helps reduce visual discomfort\nThey’re also certified by TÜV Rheinland and SGS",
+          "image": "/other/s2/b8b6093c-cf30-4f86-a004-447476feb195.__CR0,0,1464,600_PT0_SX1464_V1___.jpg"
+        },
+        {
+          "title": "Color-perfect at any brightness",
+          "text": "ASUS OLED laptops can maintain good color reproduction at any brightness level, so you can adjust the screen's brightness to suit working environment, while still enjoying exceptionally vivid colors.",
+          "image": "/other/s2/d8b12f02-89b0-4ddd-87f2-f617d247d0f2.__CR0,0,1464,600_PT0_SX1464_V1___.jpg"
+        },
+        {
+          "title": "True black: See the unseen",
+          "text": "ASUS OLED laptops reproduce blacks perfectly. This enables extremely crisp and clear images even in the darkest scenes.",
+          "image": "/other/s2/195c39d2-2615-472a-b950-ef275a35fad9.__CR0,0,1464,600_PT0_SX1464_V1___.jpg"
+        },
+        {
+          "title": "Fastest response time for smooth actions",
+          "text": "ASUS OLED displays have a 0.2 ms response time – 50x faster than the average laptop LCD display. This ensures smoother fast-paced action scenes, low-latency gameplay, and subtle details.",
+          "image": "/other/s2/b893cc3f-7c7b-488f-a747-bfe443e3d054.__CR0,0,1464,600_PT0_SX1464_V1___.jpg"
+        }
+      ]
+    },
+
+    {
+      "type": "slider",
+      "data": [
+        {
+          "title": "Next-generation connectivity",
+          "text": "For easy connections to peripherals, ZenBook Pro Duo 15 OLED has comprehensive high-performance I/O capabilities including a pair of the latest Thunderbolt 3 USB-C ports.",
+          "image": "/othe2/s3/850b64c5-3941-49bb-9656-4fe3a40b4365.__CR0,0,1464,600_PT0_SX1464_V1___.jpg"
+        },
+        {
+          "title": "Flagship performance",
+          "text": "Utilizing GeForce RTX graphics and NVIDIA Studio Drivers, the ZenBook Pro Duo 15 OLED can render quicker, broadcast clearer, and edit videos faster to enable creators make their mark on the world.",
+          "image": "/othe2/s3/a9c4be84-5979-444a-b1ef-e4a492260f29.__CR0,0,1464,600_PT0_SX1464_V1___.jpg"
+        },
+        {
+          "title": "Next-generation ergonomics, for keyboard",
+          "text": "With ZenBook Pro Duo 15 OLED and a second-generation active stylus with 4096 pressure levels, you can really let your creativity flow. Take notes, sketch out your ideas in the most intuitive way ever.",
+          "image": "/othe2/s3/9322a1ae-cd1b-4326-942c-d484d37e827e.__CR0,0,1464,600_PT0_SX1464_V1___.jpg"
+        },
+        {
+          "title": "Evolved cooling",
+          "text": "ZenBook Pro Duo 15 OLED is engineered with our new Active Aerodynamic System Plus, which uses the ErgoLift hinge mechanism and tilting ScreenPad Plus to increase overall cooling airflow by 36%.",
+          "image": "/othe2/s3/768f7643-2ab8-41ba-89f6-cea1f68d8e16.__CR0,0,1464,600_PT0_SX1464_V1___.jpg"
+        },
+        {
+          "title": "Militarily tested durability",
+          "text": "ZenBook Pro Duo 15 OLED meets the ultra-demanding MIL-STD 810G military standard for reliability and durability, undergoing a punishing test regime.",
+          "image": "/othe2/s3/a93da29e-54b7-461b-ba8a-bf84159f33c5.__CR0,0,1464,600_PT0_SX1464_V1___.jpg"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Product Description",
+      "data": "ZenBook Pro Duo 15 OLED lets you get things done in style: calmly, efficiently, and with zero fuss. It’s your powerful and elegant next-level companion for on-the-go productivity and creativity, featuring an amazing 4K OLED HDR touchscreen. It also includes the ASUS ScreenPad Plus secondary 4K display with a brand-new tilting design that offers effortless ergonomics and seamless workflows. Powered by up to an Intel Core i9 eight-core processor and NVIDIA GeForce RTX 3070 GPU, ZenBook Pro Duo 15 OLED brings you all the benefits of tomorrow’s technology, today. *The actual transfer speed of USB 3.0, 3.1, 3.2 (Gen 1 and 2), and/or Type-C will vary depending on many factors including the processing speed of the host device, file attributes and other factors related to  system configuration and your operating environment."
+    }
+  ]
+}
