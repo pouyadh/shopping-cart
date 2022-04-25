@@ -54,7 +54,7 @@ const ShoppingCart = () => {
           <React.Fragment key={`ShoppingCartItem${item.id}`}>
             <div className="shopping-cart__list__item">
               <img
-                src={item.img64}
+                src={`/products/P-${item.id}/media/i1-64.jpg`}
                 className="shopping-cart__list__item__thumb"
                 alt={item.title}
               />
