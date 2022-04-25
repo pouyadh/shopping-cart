@@ -26,7 +26,7 @@ export default function Cart({
   return (
     <div className={styles["wrapper"]}>
       <div onClick={() => navigate(`/product/${id}`)}>
-        <span className={styles["off-badge"]}>{off * 100}%</span>
+        {off !== 0 && <span className={styles["off-badge"]}>{off * 100}%</span>}
         <img className={styles["image"]} alt={title} src={img256} />
         <h3 className={styles["title"]}>{title}</h3>
         <div className={styles["rate"]}>
