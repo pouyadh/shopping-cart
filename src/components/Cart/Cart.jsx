@@ -13,6 +13,7 @@ export default function Cart({
   price,
   offerPrice,
   off,
+  availableInStock,
   img256,
 }) {
   const dispatch = useDispatch();
@@ -33,19 +34,23 @@ export default function Cart({
           <img className={styles["rate-star"]} alt="star" src={star} />
           <span>{rate}</span>
         </div>
-        <span className={styles["price-offer"]}>${offerPrice}</span>
-        <span className={styles["price"]}>${price}</span>
+        {availableInStock && (
+          <>
+            <span className={styles["price-offer"]}>${offerPrice}</span>
+            {off !== 0 && <span className={styles["price"]}>${price}</span>}
+          </>
+        )}
       </div>
-      {!shoppingCartItem ? (
+      {!availableInStock && <div>Not Available</div>}
+      {!shoppingCartItem && availableInStock && (
         <button
           className={styles["button-add"]}
           onClick={() => dispatch(addItem({ id }))}
         >
           Add to Cart
         </button>
-      ) : (
-        <Counter productId={id} />
       )}
+      {shoppingCartItem && <Counter productId={id} />}
     </div>
   );
 }
