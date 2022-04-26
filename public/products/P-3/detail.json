@@ -26,7 +26,7 @@
     "Connectivity Technology": "Bluetooth, Wi-Fi, USB, HDMI"
   },
 
-  "more": [
+  "other": [
     {
       "type": "bullet",
       "title": "About this product",
@@ -69,15 +69,6 @@
         "/other/MacBook_Pro_14-in_16-in_Product_Page_L__en-US_07._CB639392504_.jpg",
         "/other/MacBook_Pro_14-in_16-in_Product_Page_L__en-US_08._CB639392504_.jpg",
         "/other/MacBook_Pro_14-in_16-in_Product_Page_L__en-US_09._CB639392504_.jpg"
-      ]
-    },
-    {
-      "type": "bullet",
-      "title": "What's in the box",
-      "data": [
-        "14-inch MacBook Pro",
-        "USB-C to MagSafe 3 Cable (2 m)",
-        "67W USB-C Power Adapter"
       ]
     },
     {
