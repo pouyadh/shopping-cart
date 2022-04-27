@@ -298,7 +298,7 @@ const Product = () => {
             )}
           </div>
           <div className="product__main__overview__add-to-cart">
-            <Counter productId={product.id} />
+            {product.availableInStock && <Counter productId={product.id} />}
           </div>
           <div className="product__main__overview__variants">
             <h3>Variants</h3>
