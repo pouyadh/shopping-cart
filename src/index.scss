@@ -34,3 +34,21 @@ body.modal-open {
 main {
     margin-top: 70px;
 }
+
+.spinner {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid red;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

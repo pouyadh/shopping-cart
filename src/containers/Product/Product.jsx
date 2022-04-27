@@ -61,6 +61,9 @@ const HIT = ({ idx, product, title, image, text }) => (
   </div>
 );
 
+const Spinner = ({ isLoading }) =>
+  isLoading ? <div className="spinner" /> : null;
+
 const Slider = ({ idx, product, data }) => {
   const [index, setIndex] = useState(0);
   const sliderRef = useRef();
@@ -86,8 +89,11 @@ const Slider = ({ idx, product, data }) => {
 
   useEffect(() => {
     const slider = sliderRef.current;
-    slider.scrollLeft = (index * slider.scrollWidth) / data.length;
-  }, [index]);
+    slider.scrollTo({
+      left: (index * slider.scrollWidth) / data.length,
+      behavior: "smooth",
+    });
+  }, [index, data]);
 
   return (
     <div className="product__slider">
@@ -184,10 +190,21 @@ const Product = () => {
     fetch(`/products/P-${product.id}/detail.json`).then((resp) => resp.json())
   );
 
+  const [isMediaLoading, setIsMediaLoading] = useState(false);
+
   const [media, setMedia] = useState({
     type: "image",
     src: `/products/P-${product.id}/media/i1-512.jpg`,
   });
+
+  const handleMediaChange = (type, src) => {
+    //setIsMediaLoading(true);
+    setMedia({ type, src });
+  };
+
+  useEffect(() => {
+    setIsMediaLoading(true);
+  }, [media.src]);
 
   if (isLoading) return <div>loading</div>;
 
@@ -196,10 +213,20 @@ const Product = () => {
       <div className="product__main">
         <div className="product__main__media">
           <div>
+            <Spinner isLoading={isMediaLoading} />
             {media.type === "image" ? (
-              <img src={media.src} alt={product.title} />
+              <img
+                src={media.src}
+                alt={product.title}
+                onLoad={() => setIsMediaLoading(false)}
+              />
             ) : (
-              <video src={media.src} controls preload="meta" />
+              <video
+                src={media.src}
+                controls
+                preload="metadata"
+                onLoadedData={() => setIsMediaLoading(false)}
+              />
             )}
 
             <div>
@@ -209,12 +236,10 @@ const Product = () => {
                   <div
                     key={`pimage-${idx}`}
                     onClick={() =>
-                      setMedia({
-                        type: "image",
-                        src: `/products/P-${product.id}/media/i${
-                          idx + 1
-                        }-512.jpg`,
-                      })
+                      handleMediaChange(
+                        "image",
+                        `/products/P-${product.id}/media/i${idx + 1}-512.jpg`
+                      )
                     }
                   >
                     <img
@@ -229,10 +254,10 @@ const Product = () => {
                   <div
                     key={`pvideo-${idx}`}
                     onClick={() =>
-                      setMedia({
-                        type: "video",
-                        src: `/products/P-${product.id}/media/v${idx + 1}.mp4`,
-                      })
+                      handleMediaChange(
+                        "video",
+                        `/products/P-${product.id}/media/v${idx + 1}.mp4`
+                      )
                     }
                   >
                     <img
