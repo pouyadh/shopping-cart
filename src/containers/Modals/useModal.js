@@ -7,15 +7,15 @@ const useModal = () => {
   const closeModal = () => {
     if (!currentSearchParams.modal) return;
     delete currentSearchParams.modal;
-    setSearchParams(currentSearchParams);
+    setSearchParams(currentSearchParams, { replace: true });
   };
   const showShoppingCartModal = () => {
     currentSearchParams.modal = MODALS.SHOPPING_CART;
-    setSearchParams(currentSearchParams);
+    setSearchParams(currentSearchParams, { replace: true });
   };
   const showProductSearchModal = () => {
     currentSearchParams.modal = MODALS.PRODUCT_SEARCH;
-    setSearchParams(currentSearchParams);
+    setSearchParams(currentSearchParams, { replace: true });
   };
 
   return { closeModal, showProductSearchModal, showShoppingCartModal };
