@@ -151,7 +151,7 @@
     {
       "type": "text",
       "title": "Product Description",
-      "data": "Unlock more possibilities than ever with the Pro designed for a Pro like you. The first consumer laptop-to-tablet PC based on the Intel® Evo™ platform and designed to light up the best of Windows 11, Surface Pro 8 combines the power of a laptop with the flexibility of a tablet, and every angle in between, with the iconic Kickstand and detachable Keyboard* with built-in Slim Pen storage and charging.** Do great things with a larger 13” touchscreen, faster connections with Thunderbolt™ 4 ports, and extra speed when you need it."
+      "text": "Unlock more possibilities than ever with the Pro designed for a Pro like you. The first consumer laptop-to-tablet PC based on the Intel® Evo™ platform and designed to light up the best of Windows 11, Surface Pro 8 combines the power of a laptop with the flexibility of a tablet, and every angle in between, with the iconic Kickstand and detachable Keyboard* with built-in Slim Pen storage and charging.** Do great things with a larger 13” touchscreen, faster connections with Thunderbolt™ 4 ports, and extra speed when you need it."
     }
   ]
 }
