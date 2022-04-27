@@ -8,6 +8,8 @@ import { useQuery } from "react-query";
 
 import { arrowLeft, arrowRight } from "../../constants/images";
 
+import Counter from "./Counter";
+
 const Bullet = ({ idx, product, title, data }) => (
   <div className="product__bullets">
     <h3>{title}</h3>
@@ -294,6 +296,9 @@ const Product = () => {
                 <span>{product.off * 100}%</span>
               </>
             )}
+          </div>
+          <div className="product__main__overview__add-to-cart">
+            <Counter productId={product.id} />
           </div>
           <div className="product__main__overview__variants">
             <h3>Variants</h3>
