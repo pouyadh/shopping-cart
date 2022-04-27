@@ -188,8 +188,13 @@ const Product = () => {
   const params = useParams();
   const products = useSelector((state) => state.product.itemsById);
   const product = products[params.productId];
-  const { isLoading, data: details } = useQuery("product-details", () =>
-    fetch(`/products/P-${product.id}/detail.json`).then((resp) => resp.json())
+  const { isLoading, data: details } = useQuery(
+    `product-${product.id}-details.json`,
+    () =>
+      fetch(`/products/P-${product.id}/detail.json`).then((resp) =>
+        resp.json()
+      ),
+    {}
   );
 
   const [isMediaLoading, setIsMediaLoading] = useState(false);
