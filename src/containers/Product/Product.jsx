@@ -64,7 +64,11 @@ const HIT = ({ idx, product, title, image, text }) => (
 );
 
 const Spinner = ({ isLoading }) =>
-  isLoading ? <div className="spinner" /> : null;
+  isLoading ? (
+    <div className="spinner">
+      <div />
+    </div>
+  ) : null;
 
 const Slider = ({ idx, product, data }) => {
   const [index, setIndex] = useState(0);
@@ -184,6 +188,55 @@ const OtherSwitch = ({ idx, item, product }) => {
   }
 };
 
+const Media = ({ type, src, alt, onLoad = () => {} }) => {
+  return type === "image" ? (
+    <img className="media--image" src={src} alt={alt} onLoad={onLoad} />
+  ) : (
+    <video
+      className="media--video"
+      src={src}
+      controls
+      preload="metadata"
+      autoPlay
+    />
+  );
+};
+
+const MediaSelector = ({
+  productUrl,
+  alt,
+  imageCount,
+  videoCount,
+  onChange,
+}) => (
+  <div className="media-selector">
+    {Array(imageCount)
+      .fill(null)
+      .map((item, idx) => (
+        <div
+          key={`pimage-${idx}`}
+          onClick={() =>
+            onChange("image", `${productUrl}/media/i${idx + 1}-512.jpg`)
+          }
+        >
+          <img src={`${productUrl}/media/i${idx + 1}-64.jpg`} alt={alt} />
+        </div>
+      ))}
+    {Array(videoCount)
+      .fill(null)
+      .map((item, idx) => (
+        <div
+          key={`pvideo-${idx}`}
+          onClick={() =>
+            onChange("video", `${productUrl}/media/v${idx + 1}.mp4`)
+          }
+        >
+          <img src={`${productUrl}/media/i1-64.jpg`} alt={alt} />
+          <img src={play} alt="play" />
+        </div>
+      ))}
+  </div>
+);
 const Product = () => {
   const params = useParams();
   const products = useSelector((state) => state.product.itemsById);
@@ -210,71 +263,31 @@ const Product = () => {
   };
 
   useEffect(() => {
-    setIsMediaLoading(true);
+    if (media.type === "image") setIsMediaLoading(true);
   }, [media.src]);
 
   if (isLoading) return <div>loading</div>;
+  console.log(details);
 
   return (
     <div className="product">
       <div className="product__main">
         <div className="product__main__media">
-          <div>
+          <div className="product__main__media__wrapper">
             <Spinner isLoading={isMediaLoading} />
-            {media.type === "image" ? (
-              <img
-                src={media.src}
-                alt={product.title}
-                onLoad={() => setIsMediaLoading(false)}
-              />
-            ) : (
-              <video
-                src={media.src}
-                controls
-                preload="metadata"
-                onLoadedData={() => setIsMediaLoading(false)}
-              />
-            )}
-
-            <div>
-              {Array(details.media["image-count"])
-                .fill(null)
-                .map((item, idx) => (
-                  <div
-                    key={`pimage-${idx}`}
-                    onClick={() =>
-                      handleMediaChange(
-                        "image",
-                        `/products/P-${product.id}/media/i${idx + 1}-512.jpg`
-                      )
-                    }
-                  >
-                    <img
-                      src={`/products/P-${product.id}/media/i${idx + 1}-64.jpg`}
-                      alt={product.title}
-                    />
-                  </div>
-                ))}
-              {Array(details.media["video-count"])
-                .fill(null)
-                .map((item, idx) => (
-                  <div
-                    key={`pvideo-${idx}`}
-                    onClick={() =>
-                      handleMediaChange(
-                        "video",
-                        `/products/P-${product.id}/media/v${idx + 1}.mp4`
-                      )
-                    }
-                  >
-                    <img
-                      src={`/products/P-${product.id}/media/i1-64.jpg`}
-                      alt={product.title}
-                    />
-                    <img src={play} alt="play" />
-                  </div>
-                ))}
-            </div>
+            <Media
+              type={media.type}
+              src={media.src}
+              alt={product.title}
+              onLoad={() => setIsMediaLoading(false)}
+            />
+            <MediaSelector
+              productUrl={`/products/P-${product.id}`}
+              alt={product.title}
+              imageCount={details.media["image-count"]}
+              videoCount={details.media["video-count"]}
+              onChange={handleMediaChange}
+            />
           </div>
         </div>
         <div className="product__main__overview">
