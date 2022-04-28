@@ -18,14 +18,12 @@ smoothscroll.polyfill();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Provider store={store}>
-        <QueryClientProvider client={queryClient}>
-          <App />
-        </QueryClientProvider>
-        <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
-      </Provider>
-    </BrowserRouter>
-  </React.StrictMode>
+  <BrowserRouter>
+    <Provider store={store}>
+      <QueryClientProvider client={queryClient}>
+        <App />
+      </QueryClientProvider>
+      <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
+    </Provider>
+  </BrowserRouter>
 );
