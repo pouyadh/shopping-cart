@@ -9,6 +9,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 
 import { QueryClientProvider, QueryClient } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 
 import smoothscroll from "smoothscroll-polyfill";
 const queryClient = new QueryClient();
@@ -23,6 +24,7 @@ root.render(
         <QueryClientProvider client={queryClient}>
           <App />
         </QueryClientProvider>
+        <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
       </Provider>
     </BrowserRouter>
   </React.StrictMode>
