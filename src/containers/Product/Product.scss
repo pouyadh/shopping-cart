@@ -126,6 +126,14 @@
           border-radius: 8px;
         }
       }
+      &__add-to-cart {
+        .shopping-cart-product-counter {
+          width: 9rem;
+          height: 2.8rem;
+          margin: 1rem;
+          font-size: 1.1rem;
+        }
+      }
       &__variants {
         border-top: 1px solid #eee;
         padding-block: 10px;

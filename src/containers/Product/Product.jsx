@@ -1,169 +1,23 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Product.scss";
-import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { play, star } from "../../constants/images";
+import { star } from "../../constants/images";
 
 import { useQuery } from "react-query";
 
-import { arrowLeft, arrowRight } from "../../constants/images";
-
-import Counter from "./Counter";
-
-const Bullet = ({ idx, product, title, data }) => (
-  <div className="product__bullets">
-    <h3>{title}</h3>
-    <ul>
-      {data.map((blt, idx) => (
-        <li key={`pb-${product.id}-${idx}`}>{blt}</li>
-      ))}
-    </ul>
-  </div>
-);
-
-const Note = ({ idx, product, data }) => (
-  <div className="product__notes">
-    <p>
-      <strong>Note: </strong>
-      {data}
-    </p>
-  </div>
-);
-
-const Text = ({ idx, product, title, text }) => (
-  <div className="product__text">
-    <h3>{title}</h3>
-    <p>{text}</p>
-  </div>
-);
-
-const Image = ({ idx, product, image }) => (
-  <div className="product__image">
-    <img src={`/products/P-${product.id}${image}`} alt="im" />
-  </div>
-);
-
-const ImageStack = ({ idx, product, data }) => (
-  <div className="product__image-stack">
-    {data.map((src, idx2) => (
-      <img
-        key={`other-${product.id}-${idx}-${idx2}`}
-        src={`/products/P-${product.id}${src}`}
-        alt={product.title}
-      />
-    ))}
-  </div>
-);
-
-const HIT = ({ idx, product, title, image, text }) => (
-  <div className="product__hit">
-    <h1>{title}</h1>
-    <img src={`/products/P-${product.id}${image}`} alt={title} />
-    <p>{text}</p>
-  </div>
-);
-
-const Spinner = ({ isLoading }) =>
-  isLoading ? (
-    <div className="spinner">
-      <div />
-    </div>
-  ) : null;
-
-const Slider = ({ idx, product, data }) => {
-  const [index, setIndex] = useState(0);
-  const sliderRef = useRef();
-  const handleRightArrow = (e) => {
-    if (index >= data.length - 1) {
-      setIndex(0);
-    } else {
-      setIndex(index + 1);
-    }
-  };
-
-  const handleLeftArrow = (e) => {
-    if (index <= 0) {
-      setIndex(data.length - 1);
-    } else {
-      setIndex(index - 1);
-    }
-  };
-
-  const handleDot = (idx) => {
-    setIndex(idx);
-  };
-
-  useEffect(() => {
-    const slider = sliderRef.current;
-    slider.scrollTo({
-      left: (index * slider.scrollWidth) / data.length,
-      behavior: "smooth",
-    });
-  }, [index, data]);
-
-  return (
-    <div className="product__slider">
-      <div className="product__slider__wrapper" ref={sliderRef}>
-        {data.map((slide, idx2) => (
-          <span
-            key={`other[${idx}]-s${idx2}`}
-            className="product__slider__slide"
-          >
-            <img
-              src={`/products/P-${product.id}${slide.image}`}
-              alt={product.title}
-            />
-            <span>
-              <h2 className="product__slider__slide__title">{slide.title}</h2>
-              <span className="product__slider__slide__text">{slide.text}</span>
-            </span>
-          </span>
-        ))}
-      </div>
-      <span className="product__slider__arrow--left" onClick={handleLeftArrow}>
-        <img src={arrowLeft} alt="left arrow" />
-      </span>
-      <span
-        className="product__slider__arrow--right"
-        onClick={handleRightArrow}
-      >
-        <img src={arrowRight} alt="left arrow" />
-      </span>
-      <span className="product__slider__dots">
-        {data.map((slide, idx2) => (
-          <span
-            className={`product__slider__dots__dot${
-              index === idx2 ? "--active" : ""
-            }`}
-            key={`slider-${idx}-dot-${idx2}`}
-            onClick={() => handleDot(idx2)}
-          ></span>
-        ))}
-      </span>
-    </div>
-  );
-};
-
-const CartStack = ({ idx, product, title, data }) => (
-  <div className="product__cart-stack">
-    <h3>{title}</h3>
-    <div className="product__cart-stack__wrapper">
-      {data.map((item, idx2) => (
-        <div
-          key={`other[${idx}]-cs${idx2}`}
-          className="product__cart-stack__wrapper__cart"
-        >
-          <img
-            src={`/products/P-${product.id}${item.image}`}
-            alt={product.title}
-          />
-          <h4>{item.title}</h4>
-          <p>{item.text}</p>
-        </div>
-      ))}
-    </div>
-  </div>
-);
+import Bullet from "./Bullet";
+import CartStack from "./CartStack";
+import HIT from "./HIT";
+import Image from "./Image";
+import ImageStack from "./ImageStack";
+import Media from "./Media";
+import MediaList from "./MediaList";
+import Note from "./Note";
+import ShoppingCartProductCounter from "../../components/ShoppingCart/ShoppingCartProductCounter";
+import Slider from "./Slider";
+import Spinner from "./Spinner";
+import Text from "./Text";
+import { useProductsById } from "../../features/product/productSlice";
 
 const OtherSwitch = ({ idx, item, product }) => {
   switch (item.type) {
@@ -188,66 +42,19 @@ const OtherSwitch = ({ idx, item, product }) => {
   }
 };
 
-const Media = ({ type, src, alt, onLoad = () => {} }) => {
-  return type === "image" ? (
-    <img className="media--image" src={src} alt={alt} onLoad={onLoad} />
-  ) : (
-    <video
-      className="media--video"
-      src={src}
-      controls
-      preload="metadata"
-      autoPlay
-    />
-  );
-};
+const fetchProductDetails = (id) =>
+  fetch(`/products/P-${id}/detail.json`).then((resp) => resp.json());
 
-const MediaSelector = ({
-  productUrl,
-  alt,
-  imageCount,
-  videoCount,
-  onChange,
-}) => (
-  <div className="media-selector">
-    {Array(imageCount)
-      .fill(null)
-      .map((item, idx) => (
-        <div
-          key={`pimage-${idx}`}
-          onClick={() =>
-            onChange("image", `${productUrl}/media/i${idx + 1}-512.jpg`)
-          }
-        >
-          <img src={`${productUrl}/media/i${idx + 1}-64.jpg`} alt={alt} />
-        </div>
-      ))}
-    {Array(videoCount)
-      .fill(null)
-      .map((item, idx) => (
-        <div
-          key={`pvideo-${idx}`}
-          onClick={() =>
-            onChange("video", `${productUrl}/media/v${idx + 1}.mp4`)
-          }
-        >
-          <img src={`${productUrl}/media/i1-64.jpg`} alt={alt} />
-          <img src={play} alt="play" />
-        </div>
-      ))}
-  </div>
-);
 const Product = () => {
   const params = useParams();
-  const products = useSelector((state) => state.product.itemsById);
+  const products = useProductsById();
   const product = products[params.productId];
   const { isLoading, data: details } = useQuery(
-    `product-${product.id}-details.json`,
-    () =>
-      fetch(`/products/P-${product.id}/detail.json`).then((resp) =>
-        resp.json()
-      ),
-    {}
+    ["product", product.id, "details"],
+    () => fetchProductDetails(product.id),
+    {
+      enabled: !!product,
+    }
   );
 
   const [isMediaLoading, setIsMediaLoading] = useState(false);
@@ -258,16 +65,14 @@ const Product = () => {
   });
 
   const handleMediaChange = (type, src) => {
-    //setIsMediaLoading(true);
     setMedia({ type, src });
   };
 
   useEffect(() => {
-    if (media.type === "image") setIsMediaLoading(true);
+    //if (media.type === "image") setIsMediaLoading(true);
   }, [media.src]);
 
   if (isLoading) return <div>loading</div>;
-  console.log(details);
 
   return (
     <div className="product">
@@ -275,13 +80,8 @@ const Product = () => {
         <div className="product__main__media">
           <div className="product__main__media__wrapper">
             <Spinner isLoading={isMediaLoading} />
-            <Media
-              type={media.type}
-              src={media.src}
-              alt={product.title}
-              onLoad={() => setIsMediaLoading(false)}
-            />
-            <MediaSelector
+            <Media type={media.type} src={media.src} alt={product.title} />
+            <MediaList
               productUrl={`/products/P-${product.id}`}
               alt={product.title}
               imageCount={details.media["image-count"]}
@@ -316,7 +116,9 @@ const Product = () => {
             )}
           </div>
           <div className="product__main__overview__add-to-cart">
-            {product.availableInStock && <Counter productId={product.id} />}
+            {product.availableInStock && (
+              <ShoppingCartProductCounter productId={product.id} />
+            )}
           </div>
           <div className="product__main__overview__variants">
             <h3>Variants</h3>

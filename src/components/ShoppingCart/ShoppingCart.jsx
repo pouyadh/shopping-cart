@@ -1,11 +1,10 @@
 import React from "react";
 import "./ShoppingCart.scss";
 import { cross } from "../../constants/images";
-
 import { useSelector } from "react-redux";
-
-import Counter from "./Counter";
 import { useModal } from "../../containers/Modals";
+
+import ShoppingCartProductCounter from "./ShoppingCartProductCounter";
 
 const ShoppingCart = () => {
   const shoppingCartItems = useSelector((state) => state.shoppingCart.items);
@@ -66,7 +65,7 @@ const ShoppingCart = () => {
                   ${item.offerPrice}
                 </div>
               </div>
-              <Counter productId={item.id} />
+              <ShoppingCartProductCounter productId={item.id} />
             </div>
           </React.Fragment>
         ))}

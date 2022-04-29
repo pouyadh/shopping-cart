@@ -24,8 +24,8 @@ root.render(
     <Provider store={store}>
       <QueryClientProvider client={queryClient}>
         <App />
+        <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
       </QueryClientProvider>
-      <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
     </Provider>
   </BrowserRouter>
 );

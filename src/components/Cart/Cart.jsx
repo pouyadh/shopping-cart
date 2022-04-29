@@ -1,10 +1,8 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { addItem } from "../../features/shoppingCart/shoppingCartSlice";
 import star from "../../assets/star.svg";
-import styles from "./Cart.module.scss";
-import Counter from "./Counter";
+import "./Cart.scss";
 import { useNavigate } from "react-router-dom";
+import ShoppingCartProductCounter from "../ShoppingCart/ShoppingCartProductCounter";
 
 export default function Cart({
   id,
@@ -16,41 +14,35 @@ export default function Cart({
   availableInStock,
   img256,
 }) {
-  const dispatch = useDispatch();
-  const shoppingCartItemsById = useSelector(
-    (state) => state.shoppingCart.itemsById
-  );
-  const shoppingCartItem = shoppingCartItemsById[id];
-
   const navigate = useNavigate();
 
   return (
-    <div className={styles["wrapper"]}>
-      <div onClick={() => navigate(`/product/${id}`)}>
-        {off !== 0 && <span className={styles["off-badge"]}>{off * 100}%</span>}
-        <img className={styles["image"]} alt={title} src={img256} />
-        <h3 className={styles["title"]}>{title}</h3>
-        <div className={styles["rate"]}>
-          <img className={styles["rate-star"]} alt="star" src={star} />
+    <div className="product-cart">
+      <div
+        className="product-cart__body"
+        onClick={() => navigate(`/product/${id}`)}
+      >
+        {off !== 0 && (
+          <span className="product-cart__body__off-badge">{off * 100}%</span>
+        )}
+        <img className="product-cart__body__image" alt={title} src={img256} />
+        <h3 className="product-cart__body__title">{title}</h3>
+        <div className="product-cart__body__rate">
+          <img alt="star" src={star} />
           <span>{rate}</span>
         </div>
         {availableInStock && (
           <>
-            <span className={styles["price-offer"]}>${offerPrice}</span>
-            {off !== 0 && <span className={styles["price"]}>${price}</span>}
+            <span className="product-cart__body__price--offer">
+              ${offerPrice}
+            </span>
+            {off !== 0 && (
+              <span className="product-cart__body__price">${price}</span>
+            )}
           </>
         )}
       </div>
-      {!availableInStock && <div>Not Available</div>}
-      {!shoppingCartItem && availableInStock && (
-        <button
-          className={styles["button-add"]}
-          onClick={() => dispatch(addItem({ id }))}
-        >
-          Add to Cart
-        </button>
-      )}
-      {shoppingCartItem && <Counter productId={id} />}
+      <ShoppingCartProductCounter productId={id} />
     </div>
   );
 }
