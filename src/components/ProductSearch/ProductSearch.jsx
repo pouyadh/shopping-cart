@@ -3,6 +3,7 @@ import "./ProductSearch.scss";
 import { search, cross } from "../../constants/images";
 import { useSelector } from "react-redux";
 import { useModal } from "../../containers/Modals";
+import { useNavigate } from "react-router-dom";
 
 const SORT_FUNCTIONS = {
   priceAsc: (a, b) => a.price - b.price,
@@ -17,6 +18,7 @@ const SORT_FUNCTIONS = {
 const ProductSearch = () => {
   const products = useSelector((state) => state.product.items);
   const modal = useModal();
+  const navigate = useNavigate();
 
   const [result, setResult] = useState([]);
   const [sortMethod, setSortMethod] = useState("none");
@@ -145,6 +147,7 @@ const ProductSearch = () => {
             <div
               key={`search-result-${item.id}`}
               className="product-search__result__list__item"
+              onClick={() => navigate(`/product/${item.id}`)}
             >
               <img
                 src={`/products/P-${item.id}/media/i1-64.jpg`}
