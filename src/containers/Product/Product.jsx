@@ -61,12 +61,19 @@ const Product = () => {
 
   const [media, setMedia] = useState({
     type: "image",
-    src: `/products/P-${product.id}/media/i1-512.jpg`,
+    src: `/products/P-${params.productId}/media/i1-512.jpg`,
   });
 
   const handleMediaChange = (type, src) => {
     setMedia({ type, src });
   };
+
+  useEffect(() => {
+    setMedia({
+      type: "image",
+      src: `/products/P-${params.productId}/media/i1-512.jpg`,
+    });
+  }, [params]);
 
   useEffect(() => {
     //if (media.type === "image") setIsMediaLoading(true);
