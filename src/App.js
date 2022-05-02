@@ -4,10 +4,12 @@ import Header from "./containers/Header/Header";
 import Home from "./containers/Home/Home";
 import Modals from "./containers/Modals/Modals";
 import Product from "./containers/Product/Product";
+import ScrollToTopOnRouteChange from "./components/ScrollToTopOnRouteChange";
 
 function App() {
   return (
     <>
+      <ScrollToTopOnRouteChange />
       <Header />
       <main>
         <Routes>
