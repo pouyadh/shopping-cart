@@ -1,9 +1,12 @@
 .home {
-    &__cart-container {
-        padding: 10px;
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        flex-wrap: wrap;
-    }
+  &__cover {
+    background-color: black;
+  }
+  &__cart-container {
+    margin: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
 }
