@@ -1,0 +1,109 @@
+.slider {
+  position: relative;
+  z-index: 0;
+  padding: 0px !important;
+  line-height: 0;
+  height: 50vh;
+
+  &__wrapper {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    border-radius: inherit;
+    height: 100%;
+  }
+
+  &__slide {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    & > img {
+      max-width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 0;
+      margin: 0;
+    }
+    & > span {
+      text-align: left;
+      line-height: 1.3;
+      position: absolute;
+      color: white;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 10%;
+      width: 35%;
+      max-height: 80%;
+      white-space: normal;
+      & > h2 {
+        font-size: 1.4rem;
+      }
+      & > span {
+        display: none;
+        margin-top: 1em;
+        font-size: 1rem;
+        font-weight: 200;
+        @media screen and (min-width: 620px) and (min-height: 620px) {
+          display: block;
+        }
+      }
+    }
+  }
+  &__arrow {
+    &--left,
+    &--right {
+      position: absolute;
+      z-index: 1;
+      height: 100%;
+      width: 10%;
+      min-width: 20px;
+      background-color: #0001;
+      top: 0;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+      & > img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &--left {
+      left: 0px;
+    }
+    &--right {
+      right: 0px;
+    }
+  }
+  &__dots {
+    position: absolute;
+    z-index: 2;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 4px;
+
+    &__dot {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: #fff1;
+      border: 1px solid #fff3;
+      cursor: pointer;
+      &--active {
+        width: 15px;
+        height: 15px;
+        background-color: #fff4;
+        display: inline-block;
+        border-radius: 50%;
+        border: 1px solid #fff3;
+      }
+    }
+  }
+}
