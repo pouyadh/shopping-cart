@@ -1,32 +1,32 @@
 header {
-    position: fixed;
-    top: 0;
-    z-index: 1;
+  position: fixed;
+  top: 0;
+  z-index: 1;
 }
 
 .app__progressbar {
-    background-color: black;
-    position: relative;
+  background-color: black;
+  position: relative;
+  height: 3px;
+  & > div {
+    position: absolute;
+    left: 50px;
+    top: 0;
+    width: 20%;
+    background-color: rgba(255, 0, 0, 0.692);
     height: 3px;
-    &>div {
-        position: absolute;
-        left: 50px;
-        top: 0;
-        width: 20%;
-        background-color: rgba(255, 0, 0, 0.692);
-        height: 3px;
-        border-radius: 5px;
-        animation: an__app__progressbar--loading 1s linear infinite;
-    }
+    border-radius: 5px;
+    animation: an__app__progressbar--loading 1s linear infinite;
+  }
 }
 
 @keyframes an__app__progressbar--loading {
-    0% {
-        transition: none;
-        left:-20%
-    }
-    100% {
-        transition: all 1s ease-in-out;
-        left: 100%
-    }
+  0% {
+    transition: none;
+    left: -20%;
+  }
+  100% {
+    transition: all 1s ease-in-out;
+    left: 100%;
+  }
 }

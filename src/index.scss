@@ -1,37 +1,32 @@
 * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Nunito' , sans-serif;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", sans-serif;
+  box-sizing: border-box;
 }
 html {
-    font-size: 14;
+  font-size: 14;
 }
 
 ::-webkit-scrollbar {
-    width: .6rem;
-    height: .6rem;
-    &-track {
-        background-color: #0001;
-        border-radius: 100vw ;
+  width: 0.6rem;
+  height: 0.6rem;
+  &-track {
+    background-color: #0001;
+    border-radius: 100vw;
+  }
+  &-thumb {
+    background-color: #0005;
+    border-radius: 100vw;
+    &:hover {
+      background-color: #0006;
     }
-    &-thumb {
-        background-color: #0005;
-        border-radius: 100vw;
-        &:hover {
-            background-color: #0006;
-        }
-        &:active {
-            background-color: #0009;
-        }
+    &:active {
+      background-color: #0009;
     }
+  }
 }
 
 body.modal-open {
-    overflow: hidden;
+  overflow: hidden;
 }
-
-main {
-    margin-top: 70px;
-}
-

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useQueryClient } from "react-query";
 import Navbar from "../../components/Navbar/Navbar";
 import "./Header.scss";
@@ -19,11 +19,20 @@ const Progressbar = () => {
 };
 
 const Header = () => {
+  const headerRef = useRef();
+  const fillerRef = useRef();
+  useEffect(() => {
+    const headerBoundings = headerRef.current.getBoundingClientRect();
+    fillerRef.current.style.height = `${headerBoundings.height}px`;
+  }, []);
   return (
-    <header>
-      <Progressbar />
-      <Navbar />
-    </header>
+    <>
+      <header ref={headerRef}>
+        <Progressbar />
+        <Navbar />
+      </header>
+      <div ref={fillerRef}></div>
+    </>
   );
 };
 
