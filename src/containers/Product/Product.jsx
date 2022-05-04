@@ -76,7 +76,7 @@ const Product = () => {
   }, [params]);
 
   useEffect(() => {
-    //if (media.type === "image") setIsMediaLoading(true);
+    if (media.type === "image") setIsMediaLoading(true);
   }, [media.src]);
 
   if (isLoading) return <div>loading</div>;
@@ -87,7 +87,12 @@ const Product = () => {
         <div className="product__main__media">
           <div className="product__main__media__wrapper">
             <Spinner isLoading={isMediaLoading} />
-            <Media type={media.type} src={media.src} alt={product.title} />
+            <Media
+              type={media.type}
+              src={media.src}
+              alt={product.title}
+              onLoad={() => setIsMediaLoading(false)}
+            />
             <MediaList
               productUrl={`/products/P-${product.id}`}
               alt={product.title}
