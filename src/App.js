@@ -5,6 +5,7 @@ import Home from "./containers/Home/Home";
 import Modals from "./containers/Modals/Modals";
 import Product from "./containers/Product/Product";
 import ScrollToTopOnRouteChange from "./components/ScrollToTopOnRouteChange";
+import Footer from "./containers/Footer/Footer";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/product/:productId" element={<Product />} />
         </Routes>
       </main>
+      <Footer />
       <Modals />
     </>
   );
