@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import "./ProductSearch.scss";
-import { search, cross } from "../../constants/images";
+import { FaSearch, FaTimes } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { useModal } from "../../containers/Modals";
 import { useNavigate } from "react-router-dom";
@@ -90,15 +90,13 @@ const ProductSearch = () => {
         <span className="product-search__header__title">
           Search in Products
         </span>
-        <img
-          src={cross}
+        <FaTimes
           className="product-search__header__close-btn"
-          alt="close"
           onClick={() => modal.closeModal()}
         />
       </div>
       <div className="product-search__text">
-        <img src={search} alt="search" />
+        <FaSearch />
         <input
           type="text"
           name="search"

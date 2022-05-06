@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Product.scss";
 import { useParams } from "react-router-dom";
-import { star } from "../../constants/images";
+import { FaStar } from "react-icons/fa";
 
 import { useQuery } from "react-query";
 
@@ -108,7 +108,7 @@ const Product = () => {
             <p>{product.description}</p>
           </div>
           <div className="product__main__overview__ratings">
-            <img src={star} alt="star" />
+            <FaStar />
             <span>{product.rate}</span>
           </div>
           <div className="product__main__overview__price">

@@ -1,6 +1,6 @@
 import React from "react";
 import "./ShoppingCart.scss";
-import { cross } from "../../constants/images";
+import { FaTimes } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { useModal } from "../../containers/Modals";
 
@@ -25,10 +25,8 @@ const ShoppingCart = () => {
       <div className="shopping-cart">
         <div className="shopping-cart__header">
           <span className="shopping-cart__header__title">Shopping Cart</span>
-          <img
-            src={cross}
+          <FaTimes
             className="shopping-cart__header__close-btn"
-            alt="close"
             onClick={() => modal.closeModal()}
           />
         </div>
@@ -40,10 +38,8 @@ const ShoppingCart = () => {
     <div className="shopping-cart">
       <div className="shopping-cart__header">
         <span className="shopping-cart__header__title">Shopping Cart</span>
-        <img
-          src={cross}
+        <FaTimes
           className="shopping-cart__header__close-btn"
-          alt="close"
           onClick={() => modal.closeModal()}
         />
       </div>

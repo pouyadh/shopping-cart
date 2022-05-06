@@ -36,7 +36,8 @@
       white-space: nowrap;
     }
     &__rate {
-      & > img {
+      & > svg {
+        color: #f7ce30;
         width: 24px;
         height: 24px;
       }

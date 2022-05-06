@@ -64,7 +64,8 @@
       top: 0;
       transition: background-color 0.3s ease;
       cursor: pointer;
-      & > img {
+      & > svg {
+        color: white;
         position: absolute;
         left: 50%;
         top: 50%;

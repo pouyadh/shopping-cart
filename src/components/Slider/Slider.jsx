@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./Slider.scss";
-import { arrowLeft, arrowRight } from "../../constants/images";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const Slider = ({ list, autoRole, withArrow, withDots }) => {
   const [index, setIndex] = useState(0);
@@ -73,10 +73,10 @@ const Slider = ({ list, autoRole, withArrow, withDots }) => {
       {withArrow && (
         <>
           <span className="slider__arrow--left" onClick={handleLeftArrow}>
-            <img src={arrowLeft} alt="left arrow" />
+            <FaArrowLeft />
           </span>
           <span className="slider__arrow--right" onClick={handleRightArrow}>
-            <img src={arrowRight} alt="left arrow" />
+            <FaArrowRight />
           </span>
         </>
       )}

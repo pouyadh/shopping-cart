@@ -1,8 +1,8 @@
 import React from "react";
 import "./Navbar.scss";
-import logo from "../../assets/logo.png";
+import { logo } from "../../constants/images";
 import { useSelector } from "react-redux";
-import { search, basket } from "../../constants/images";
+import { FaShoppingBag, FaSearch } from "react-icons/fa";
 import { useModal } from "../../containers/Modals";
 import { useNavigate } from "react-router-dom";
 
@@ -26,11 +26,7 @@ const Navbar = () => {
           className="navbar__group__icon-button"
           onClick={() => modal.showShoppingCartModal()}
         >
-          <img
-            src={basket}
-            className="navbar__group__icon-button__icon"
-            alt="basket"
-          />
+          <FaShoppingBag className="navbar__group__icon-button__icon" />
           {!!itemCount && (
             <span className="navbar__group__icon-button__badge">
               {itemCount}
@@ -41,11 +37,7 @@ const Navbar = () => {
           className="navbar__group__icon-button"
           onClick={() => modal.showProductSearchModal()}
         >
-          <img
-            src={search}
-            className="navbar__group__icon-button__icon"
-            alt="search"
-          />
+          <FaSearch className="navbar__group__icon-button__icon" />
         </span>
       </span>
     </div>

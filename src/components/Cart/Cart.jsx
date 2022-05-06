@@ -1,5 +1,5 @@
 import React from "react";
-import star from "../../assets/star.svg";
+import { FaStar } from "react-icons/fa";
 import "./Cart.scss";
 import { useNavigate } from "react-router-dom";
 import ShoppingCartProductCounter from "../ShoppingCart/ShoppingCartProductCounter";
@@ -28,7 +28,7 @@ export default function Cart({
         <img className="product-cart__body__image" alt={title} src={img256} />
         <h3 className="product-cart__body__title">{title}</h3>
         <div className="product-cart__body__rate">
-          <img alt="star" src={star} />
+          <FaStar />
           <span>{rate}</span>
         </div>
         {availableInStock && (

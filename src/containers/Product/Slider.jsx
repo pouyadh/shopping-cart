@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { arrowLeft, arrowRight } from "../../constants/images";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const Slider = ({ idx, product, data }) => {
   const [index, setIndex] = useState(0);
@@ -63,13 +63,13 @@ const Slider = ({ idx, product, data }) => {
         ))}
       </div>
       <span className="product__slider__arrow--left" onClick={handleLeftArrow}>
-        <img src={arrowLeft} alt="left arrow" />
+        <FaArrowLeft />
       </span>
       <span
         className="product__slider__arrow--right"
         onClick={handleRightArrow}
       >
-        <img src={arrowRight} alt="left arrow" />
+        <FaArrowRight />
       </span>
       <span className="product__slider__dots">
         {data.map((slide, idx2) => (

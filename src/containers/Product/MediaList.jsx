@@ -1,5 +1,5 @@
 import React from "react";
-import { play } from "../../constants/images";
+import { FaPlay } from "react-icons/fa";
 
 const MediaList = ({ productUrl, alt, imageCount, videoCount, onChange }) => (
   <div className="media-selector">
@@ -25,7 +25,7 @@ const MediaList = ({ productUrl, alt, imageCount, videoCount, onChange }) => (
           }
         >
           <img src={`${productUrl}/media/i1-64.jpg`} alt={alt} />
-          <img src={play} alt="play" />
+          <FaPlay />
         </div>
       ))}
   </div>

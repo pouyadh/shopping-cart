@@ -1,6 +1,6 @@
 import React from "react";
 import "./ShoppingCartProductCounter.scss";
-import { minus, trash, plus } from "../../constants/images";
+import { FaMinus, FaPlus, FaTrash } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import {
   removeItem,
@@ -39,19 +39,22 @@ const ShoppingCartProductCounter = ({ productId }) => {
   return (
     <div className="shopping-cart-product-counter">
       <div className="shopping-cart-product-counter__counter">
-        <img
-          src={item.count > 1 ? minus : trash}
-          alt="minus"
-          className="shopping-cart-product-counter__counter__btn"
-          onClick={() => dispatch(removeItem({ id: item.id }))}
-        />
+        {item.count > 1 ? (
+          <FaMinus
+            className="shopping-cart-product-counter__counter__btn--minus"
+            onClick={() => dispatch(removeItem({ id: item.id }))}
+          />
+        ) : (
+          <FaTrash
+            className="shopping-cart-product-counter__counter__btn--trash"
+            onClick={() => dispatch(removeItem({ id: item.id }))}
+          />
+        )}
         <span className="shopping-cart-product-counter__counter__count">
           {item.count}
         </span>
-        <img
-          src={plus}
-          alt="plus"
-          className="shopping-cart-product-counter__counter__btn"
+        <FaPlus
+          className="shopping-cart-product-counter__counter__btn--plus"
           onClick={() => dispatch(addItem({ id: item.id }))}
         />
       </div>
