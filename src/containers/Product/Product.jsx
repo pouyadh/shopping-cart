@@ -18,7 +18,7 @@ import Slider from "./Slider";
 import Spinner from "./Spinner";
 import Text from "./Text";
 import { useProductsById } from "../../features/product/productSlice";
-import { productApi } from "../../api";
+import { productApi } from "../../APIs";
 
 const OtherSwitch = ({ idx, item, product }) => {
   switch (item.type) {

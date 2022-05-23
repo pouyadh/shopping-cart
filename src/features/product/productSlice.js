@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { useSelector } from "react-redux";
-import { productApi } from "../../api";
+import { productApi } from "../../APIs";
 
 export const fetchAllProducts = createAsyncThunk(
   "products/fetchAll",
