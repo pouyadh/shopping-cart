@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Product.scss";
 import { useParams } from "react-router-dom";
-import { FaStar } from "react-icons/fa";
 
 import { useQuery } from "react-query";
 
@@ -11,13 +10,14 @@ import HIT from "./HIT";
 import Image from "./Image";
 import ImageStack from "./ImageStack";
 import Note from "./Note";
-import ShoppingCartProductCounter from "../../components/ShoppingCart/ShoppingCartProductCounter";
+
 import Slider from "./Slider";
 import Text from "./Text";
 import { useProductsById } from "../../features/product/productSlice";
 import { productApi } from "../../APIs";
 
 import ProductMedia from "./ProductMedia";
+import ProductOverview from "./ProductOverview";
 
 const OtherSwitch = ({ idx, item, product }) => {
   switch (item.type) {
@@ -61,62 +61,7 @@ const Product = () => {
     <div className="product">
       <div className="product__main">
         <ProductMedia product={product} />
-        <div className="product__main__overview">
-          <h2 className="product__main__overview__title">{product.title}</h2>
-          <div className="product__main__overview__desc">
-            <p>{product.description}</p>
-          </div>
-          <div className="product__main__overview__ratings">
-            <FaStar />
-            <span>{product.rate}</span>
-          </div>
-          <div className="product__main__overview__price">
-            {product.availableInStock && (
-              <span>
-                <span>$</span>
-                {product.offerPrice.toFixed()}
-                <span>{((product.offerPrice % 1) * 100).toFixed()}</span>
-              </span>
-            )}
-            {!product.availableInStock && <div>Not Available</div>}
-            {!!product.off && (
-              <>
-                <span>${product.price}</span>
-                <span>{product.off * 100}%</span>
-              </>
-            )}
-          </div>
-          <div className="product__main__overview__add-to-cart">
-            {product.availableInStock && (
-              <ShoppingCartProductCounter productId={product.id} />
-            )}
-          </div>
-          <div className="product__main__overview__variants">
-            <h3>Variants</h3>
-            {details.variants.map((v) => (
-              <select key={`pv-${product.id}-${v.name}`} name={v.name}>
-                {v.values.map((o, idx) => (
-                  <option key={`pvv-${product.id}-${v.name}-${idx}`} value={o}>
-                    {o}
-                  </option>
-                ))}
-              </select>
-            ))}
-          </div>
-          <div className="product__main__overview__spec">
-            <h3>Detailes</h3>
-            <table>
-              <tbody>
-                {Object.entries(details.spec).map(([k, v], idx) => (
-                  <tr key={`ps-${product.id}-${idx}`}>
-                    <td>{k}</td>
-                    <td>{v}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
+        <ProductOverview product={product} />
       </div>
       {details.other.map((item, idx) => (
         <OtherSwitch
