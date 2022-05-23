@@ -1,6 +1,6 @@
 import React from "react";
 
-const Note = ({ idx, product, data }) => (
+const Note = ({ data }) => (
   <div className="product__notes">
     <p>
       <strong>Note: </strong>

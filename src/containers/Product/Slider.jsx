@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-const Slider = ({ idx, product, data }) => {
+const Slider = ({ product, data }) => {
   const [index, setIndex] = useState(0);
   const sliderRef = useRef();
   const handleRightArrow = (e) => {
@@ -47,10 +47,7 @@ const Slider = ({ idx, product, data }) => {
     <div className="product__slider">
       <div className="product__slider__wrapper" ref={sliderRef}>
         {data.map((slide, idx2) => (
-          <span
-            key={`other[${idx}]-s${idx2}`}
-            className="product__slider__slide"
-          >
+          <span key={`s${idx2}`} className="product__slider__slide">
             <img
               src={`/products/P-${product.id}${slide.image}`}
               alt={product.title}
@@ -72,13 +69,13 @@ const Slider = ({ idx, product, data }) => {
         <FaArrowRight />
       </span>
       <span className="product__slider__dots">
-        {data.map((slide, idx2) => (
+        {data.map((slide, idx) => (
           <span
             className={`product__slider__dots__dot${
-              index === idx2 ? "--active" : ""
+              index === idx ? "--active" : ""
             }`}
-            key={`slider-${idx}-dot-${idx2}`}
-            onClick={() => handleDot(idx2)}
+            key={`dot-${idx}`}
+            onClick={() => handleDot(idx)}
           ></span>
         ))}
       </span>

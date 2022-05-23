@@ -12,9 +12,9 @@ const ProductsMoreInfo = ({ product }) => {
   return product.details.other.map((item, idx) => {
     switch (item.type) {
       case "bullet":
-        return <Bullet key={`pmf-${idx}`} product={product} {...item} />;
+        return <Bullet key={`pmf-${idx}`} {...item} />;
       case "note":
-        return <Note key={`pmf-${idx}`} product={product} {...item} />;
+        return <Note key={`pmf-${idx}`} {...item} />;
       case "image":
         return <Image key={`pmf-${idx}`} product={product} {...item} />;
       case "image-stack":
@@ -26,7 +26,7 @@ const ProductsMoreInfo = ({ product }) => {
       case "HIT":
         return <HIT key={`pmf-${idx}`} product={product} {...item} />;
       case "text":
-        return <Text key={`pmf-${idx}`} product={product} {...item} />;
+        return <Text key={`pmf-${idx}`} {...item} />;
       default:
         return <React.Fragment key={`pmf-${idx}`}></React.Fragment>;
     }

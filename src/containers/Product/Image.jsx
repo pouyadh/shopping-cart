@@ -1,6 +1,6 @@
 import React from "react";
 
-const Image = ({ idx, product, image }) => (
+const Image = ({ product, image }) => (
   <div className="product__image">
     <img src={`/products/P-${product.id}${image}`} alt="im" />
   </div>
