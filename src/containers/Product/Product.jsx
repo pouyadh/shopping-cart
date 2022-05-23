@@ -10,15 +10,14 @@ import CartStack from "./CartStack";
 import HIT from "./HIT";
 import Image from "./Image";
 import ImageStack from "./ImageStack";
-import Media from "./Media";
-import MediaList from "./MediaList";
 import Note from "./Note";
 import ShoppingCartProductCounter from "../../components/ShoppingCart/ShoppingCartProductCounter";
 import Slider from "./Slider";
-import Spinner from "./Spinner";
 import Text from "./Text";
 import { useProductsById } from "../../features/product/productSlice";
 import { productApi } from "../../APIs";
+
+import ProductMedia from "./ProductMedia";
 
 const OtherSwitch = ({ idx, item, product }) => {
   switch (item.type) {
@@ -46,60 +45,22 @@ const OtherSwitch = ({ idx, item, product }) => {
 const Product = () => {
   const params = useParams();
   const products = useProductsById();
-  const product = products[params.productId];
   const { isLoading, data: details } = useQuery(
-    ["product", product.id, "details"],
-    () => productApi.fetchDetailsById(product.id),
-    {
-      enabled: !!product,
-    }
+    ["product", params.productId, "details"],
+    () => productApi.fetchDetailsById(params.productId)
   );
 
-  const [isMediaLoading, setIsMediaLoading] = useState(false);
-
-  const [media, setMedia] = useState({
-    type: "image",
-    src: `/products/P-${params.productId}/media/i1-512.jpg`,
-  });
-
-  const handleMediaChange = (type, src) => {
-    setMedia({ type, src });
-  };
-
-  useEffect(() => {
-    setMedia({
-      type: "image",
-      src: `/products/P-${params.productId}/media/i1-512.jpg`,
-    });
-  }, [params]);
-
-  useEffect(() => {
-    if (media.type === "image") setIsMediaLoading(true);
-  }, [media.src]);
-
   if (isLoading) return <div>loading</div>;
+
+  const product = {
+    ...products[params.productId],
+    details,
+  };
 
   return (
     <div className="product">
       <div className="product__main">
-        <div className="product__main__media">
-          <div className="product__main__media__wrapper">
-            <Spinner isLoading={isMediaLoading} />
-            <Media
-              type={media.type}
-              src={media.src}
-              alt={product.title}
-              onLoad={() => setIsMediaLoading(false)}
-            />
-            <MediaList
-              productUrl={`/products/P-${product.id}`}
-              alt={product.title}
-              imageCount={details.media["image-count"]}
-              videoCount={details.media["video-count"]}
-              onChange={handleMediaChange}
-            />
-          </div>
-        </div>
+        <ProductMedia product={product} />
         <div className="product__main__overview">
           <h2 className="product__main__overview__title">{product.title}</h2>
           <div className="product__main__overview__desc">
