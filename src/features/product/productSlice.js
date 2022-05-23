@@ -41,6 +41,6 @@ const productSlice = createSlice({
 //export { } = productSlice.actions;
 export default productSlice.reducer;
 
+export const useProductsState = () => useSelector((state) => state.product.state);
 export const useProducts = () => useSelector((state) => state.product.items);
-export const useProductsById = () =>
-  useSelector((state) => state.product.itemsById);
+export const useProductsById = () => useSelector((state) => state.product.itemsById);
