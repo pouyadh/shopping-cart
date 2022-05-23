@@ -18,6 +18,7 @@ import Slider from "./Slider";
 import Spinner from "./Spinner";
 import Text from "./Text";
 import { useProductsById } from "../../features/product/productSlice";
+import { productApi } from "../../api";
 
 const OtherSwitch = ({ idx, item, product }) => {
   switch (item.type) {
@@ -42,16 +43,13 @@ const OtherSwitch = ({ idx, item, product }) => {
   }
 };
 
-const fetchProductDetails = (id) =>
-  fetch(`/products/P-${id}/detail.json`).then((resp) => resp.json());
-
 const Product = () => {
   const params = useParams();
   const products = useProductsById();
   const product = products[params.productId];
   const { isLoading, data: details } = useQuery(
     ["product", product.id, "details"],
-    () => fetchProductDetails(product.id),
+    () => productApi.fetchDetailsById(product.id),
     {
       enabled: !!product,
     }
