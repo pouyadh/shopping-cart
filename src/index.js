@@ -1,20 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.scss";
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import { QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
+import { store, queryClient } from "./config";
+
 import App from "./App";
 
-import { store } from "./store";
-import { Provider } from "react-redux";
-
-import { BrowserRouter } from "react-router-dom";
-
-import { QueryClientProvider, QueryClient } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
-
 import smoothscroll from "smoothscroll-polyfill";
-const queryClient = new QueryClient({
-  defaultOptions: { queries: { refetchOnWindowFocus: false } },
-});
+import "./index.scss";
 
 smoothscroll.polyfill();
 
