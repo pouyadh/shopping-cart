@@ -33,7 +33,6 @@ const Slider = ({ product, data }) => {
     const handleResize = () => {
       slider.scrollTo({
         left: (index * slider.scrollWidth) / data.length,
-        behavior: "smooth",
       });
     };
     window.addEventListener("resize", handleResize);
